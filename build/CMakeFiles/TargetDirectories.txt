@@ -1,0 +1,3 @@
+/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/MyProgram.dir
+/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/edit_cache.dir
+/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/rebuild_cache.dir

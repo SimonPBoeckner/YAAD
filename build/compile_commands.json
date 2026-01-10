@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/Users/sim/Projects/aprilTagDetector/build",
+  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -g -arch arm64 -o CMakeFiles/MyProgram.dir/src/main.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/main.cpp",
+  "file": "/Users/sim/Projects/aprilTagDetector/src/main.cpp",
+  "output": "CMakeFiles/MyProgram.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/sim/Projects/aprilTagDetector/build",
+  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -g -arch arm64 -o CMakeFiles/MyProgram.dir/src/pipeline/capture.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/capture.cpp",
+  "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/capture.cpp",
+  "output": "CMakeFiles/MyProgram.dir/src/pipeline/capture.cpp.o"
+},
+{
+  "directory": "/Users/sim/Projects/aprilTagDetector/build",
+  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -g -arch arm64 -o CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/fiducialDetector.cpp",
+  "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/fiducialDetector.cpp",
+  "output": "CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.o"
+},
+{
+  "directory": "/Users/sim/Projects/aprilTagDetector/build",
+  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -g -arch arm64 -o CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/cameraPoseEstimator.cpp",
+  "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/cameraPoseEstimator.cpp",
+  "output": "CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o"
+}
+]
