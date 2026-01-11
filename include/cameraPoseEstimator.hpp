@@ -16,10 +16,18 @@ protected:
     nlohmann::json jason;
 
     float fid_size;
-    std::vector<std::vector<units::meter_t>> object_points;
-    std::vector<std::vector<units::meter_t>> frame_points;
+    std::vector<cv::Point3d> object_points;
+    std::vector<cv::Point2d> frame_points;
     std::vector<int> tag_ids;
     std::vector<frc::Pose3d> tag_poses;
+
+    cv::Mat cameraMatrix = (cv::Mat_<double>(3,3) <<
+        600, 0, 320,
+        0, 600, 240,
+        0, 0, 1
+    );
+
+    cv::Mat distCoeffs = cv::Mat::zeros(5, 1, CV_64F);
 };
 
 class MultiTagCameraPoseEstimator: public CameraPoseEstimator {

@@ -10,4 +10,4 @@
 #include "frc/geometry/Quaternion.h"
 
 frc::Pose3d OpenCVPoseToWpiLib(const cv::Mat& tvec, const cv::Mat& rvec);
-std::vector<units::meter_t> WPILibTranslationToOpenCV(const frc::Translation3d& translation);
+std::vector<double> WPILibTranslationToOpenCV(const frc::Translation3d& translation);

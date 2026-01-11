@@ -33,10 +33,10 @@ frc::Pose3d OpenCVPoseToWPILib(const cv::Mat& tvec, const cv::Mat& rvec) {
     );
 }
 
-std::vector<units::meter_t> WPILibTranslationToOpenCV(const frc::Translation3d& translation) {
+std::vector<double> WPILibTranslationToOpenCV(const frc::Translation3d& translation) {
     return {
-        -translation.Y(),
-        -translation.Z(),
-        translation.X()
+        double(-translation.Y()),
+        double(-translation.Z()),
+        double(translation.X())
     };
 }
