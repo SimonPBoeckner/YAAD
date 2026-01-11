@@ -260,6 +260,20 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/forward.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_final.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conjunction.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/disjunction.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/has_unique_object_representation.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_aggregate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_swappable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/negation.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/common_reference.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/copy_cvref.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_bounded_array.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_constant_evaluated.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_nothrow_convertible.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/lazy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_unbounded_array.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/unwrap_ref.h \
   /usr/local/include/opencv4/opencv2/core/hal/interface.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__cstddef/byte.h \
@@ -296,7 +310,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iterator_operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iter_swap.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/swap.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_swappable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_iterator_concept.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/concepts.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/arithmetic.h \
@@ -306,8 +319,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/common_reference_with.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/convertible_to.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/same_as.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/common_reference.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/copy_cvref.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/make_const_lvalue_ref.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/constructible.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/destructible.h \
@@ -334,10 +345,8 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/pair.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/tuple.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/disjunction.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/pointer_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/addressof.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conjunction.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/convert_to_integral.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/unreachable.h \
@@ -373,7 +382,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_implicitly_default_constructible.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_relocatable.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/unwrap_ref.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/piecewise_construct.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__string/constexpr_c_functions.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -381,7 +389,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/placement_new_delete.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/datasizeof.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_always_bitcastable.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_constant_evaluated.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_equality_comparable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/element_count.h \
@@ -451,19 +458,28 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_element.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_like_ext.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/negation.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/in_place.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_partial_order_fallback.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/partial_order.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_three_way.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/weak_order.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/strong_order.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_cast.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/exponential_functions.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/promote.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/traits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/priority_tag.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_strong_order_fallback.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_weak_order_fallback.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/is_eq.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hypot.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/abs.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/exponential_functions.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/promote.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/min_max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/roots.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/special_functions.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/copysign.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/error_functions.h \
@@ -508,8 +524,10 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/atomic_init.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/fence.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/kill_dependency.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/atomic_ref.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdlib \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/common_with.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/iterator.h \
@@ -543,6 +561,10 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/empty.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/wrap_iter.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/data.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/empty.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/size.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/common_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_function.h \
@@ -565,14 +587,26 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/nothrow_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/global_typed_new_delete.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/new_handler.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/interference_size.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/launder.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/destroying_delete_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocator_arg_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/uses_allocator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/ignore.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/lazy.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/maybe_const.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/rel_ops.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/as_const.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/cmp.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/counted_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/indirectly_comparable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/mergeable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/permutable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/sortable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/align.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocator.h \
@@ -582,7 +616,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/inout_ptr.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/shared_ptr.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_three_way.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocation_guard.h \
@@ -591,17 +624,21 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/shared_count.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/uninitialized_algorithms.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/move.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_unbounded_array.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/exception_guard.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_ptr.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/array_cookie.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_bounded_array.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/private_constructor_tag.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_specialization.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/out_ptr.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/raw_storage_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/temporary_buffer.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_temporary_buffer.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/concepts.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/ranges_construct_at.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/ranges_uninitialized_algorithms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_out_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/uses_allocator_construction.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/generate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/generate_n.h \
@@ -620,7 +657,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/mismatch.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/simd_utils.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_cast.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/countl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/aliasing_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/make_heap.h \
@@ -642,7 +678,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__debug_utils/strict_weak_ordering_check.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__debug_utils/randomize_range.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/blsr.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/partial_sort_copy.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/make_projected.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/partition.h \
@@ -677,9 +712,114 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/transform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique_copy.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_execution_policy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/clamp.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/for_each_n.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pstl.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/sample.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_found_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_fun_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_in_out_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_in_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_out_out_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare_three_way.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/three_way_comp_ref_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/min_max_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_adjacent_find.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_all_of.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_any_of.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_binary_search.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_clamp.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_contains.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_find.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_find_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy_backward.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy_n.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_count.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_count_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_equal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_equal_range.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_fill.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_fill_n.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_find_end.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_find_first_of.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_find_if_not.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_for_each.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_for_each_n.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_generate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_generate_n.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_includes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_inplace_merge.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_heap.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_heap_until.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_partitioned.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_permutation.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_sorted.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_sorted_until.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_lexicographical_compare.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_lower_bound.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_make_heap.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_max.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_min_element.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_max_element.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_merge.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_min.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_minmax.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_minmax_element.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_mismatch.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move_backward.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_next_permutation.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_none_of.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_nth_element.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_partial_sort.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_partial_sort_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_partition.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_partition_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_partition_point.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_pop_heap.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_prev_permutation.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_push_heap.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_remove.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_remove_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_remove_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_remove_copy_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_replace.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_replace_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_replace_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_replace_copy_if.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_reverse.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_reverse_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_rotate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_rotate_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sample.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/uniform_random_bit_generator_adaptor.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_random_bit_generator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_search.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_search_n.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_set_difference.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_set_intersection.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_set_symmetric_difference.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_set_union.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_shuffle.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sort.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sort_heap.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_stable_partition.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_stable_sort.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_swap_ranges.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_transform.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_unique.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_unique_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_upper_bound.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shift_left.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shift_right.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/bit \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_ceil.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_floor.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_width.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/endian.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/has_single_bit.h \
   /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__debug_utils/sanitizers.h \
@@ -697,9 +837,6 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/scope_guard.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string_view \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/string_view.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/data.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/empty.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/size.h \
   /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
   /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
   /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
@@ -716,21 +853,17 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/comparison.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare_three_way.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/three_way_comp_ref_type.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/vector.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/swap.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/vector.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy_n.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_out_result.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/temp_value.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/container_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/container_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/vector_bool.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit_reference \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/pmr.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/erase.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/static_bounded_iter.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
@@ -808,9 +941,53 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/format \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/deque.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/buffer.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/concepts.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_parse_context.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/format.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_to_n_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/container_adaptor.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/range_default_formatter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/statically_widen.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/range_formatter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_context.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_arg.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_arg_store.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_args.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_output.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/parser_std_format_spec.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/unicode.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/extended_grapheme_cluster_table.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/indic_conjunct_break_table.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/queue.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/deque.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/ref_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/escaped_output_table.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_functions.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_bool.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_integral.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars_integral.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/tables.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars_base_10.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/traits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_char.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/write_escaped.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_floating_point.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/chars_format.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars_floating_point.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_integer.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_pointer.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_tuple.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_negate.h \
@@ -824,17 +1001,21 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/is_transparent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/launder.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/can_extract_key.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/remove_const_ref.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/erase_if_container.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/not_fn.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind_front.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /usr/local/include/opencv4/opencv2/core/utility.hpp \
   /usr/local/include/opencv4/opencv2/core/optim.hpp \
@@ -854,7 +1035,34 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /usr/local/include/opencv4/opencv2/core/async.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/file_clock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/calendar.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/day.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/exception.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/hh_mm_ss.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/literals.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/year.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/local_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/month.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/month_weekday.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/weekday.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/monthday.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/sys_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/year_month.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/year_month_day.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/year_month_weekday.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/formatter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/concepts.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/convert_to_tm.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/utc_clock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/zoned_time.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/ostream.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/parser_std_format_spec.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/charconv \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_floating_point.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_result.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_integral.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars.h \
   /usr/local/include/opencv4/opencv2/dnn/../dnn/version.hpp \
   /usr/local/include/opencv4/opencv2/dnn/dict.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
@@ -929,4 +1137,390 @@ CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o: \
   /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp \
   /usr/local/include/opencv4/opencv2/video.hpp \
   /usr/local/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/include/opencv4/opencv2/video/background_segm.hpp
+  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/local/include/wpimath/frc/geometry/Pose3d.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/span \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/span.h \
+  /usr/local/include/wpimath/Eigen/Core \
+  /usr/local/include/wpimath/Eigen/Version \
+  /usr/local/include/wpimath/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/Macros.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/../InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/ConfigureVectorization.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/arm_fp16.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/Constants.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/Meta.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/Assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
+  /usr/local/include/wpimath/Eigen/src/Core/util/ForwardDeclarations.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/StaticAssert.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/XprHelper.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/Memory.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/IntegralConstant.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/Serializer.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/SymbolicIndex.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/EmulateArray.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/MoreMeta.h \
+  /usr/local/include/wpimath/Eigen/src/Core/NumTraits.h \
+  /usr/local/include/wpimath/Eigen/src/Core/./InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/Core/MathFunctions.h \
+  /usr/local/include/wpimath/Eigen/src/Core/RandomImpl.h \
+  /usr/local/include/wpimath/Eigen/src/Core/GenericPacketMath.h \
+  /usr/local/include/wpimath/Eigen/src/Core/MathFunctionsImpl.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/ConjHelper.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/../../InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/Half.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/BFloat16.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/PacketMath.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/../../InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/TypeCasting.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/MathFunctions.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/Complex.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/Settings.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/TernaryFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/../InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/BinaryFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/UnaryFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/NullaryFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/StlFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/functors/AssignmentFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/UnaryFunctors.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/IndexedViewHelper.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/ReshapedHelper.h \
+  /usr/local/include/wpimath/Eigen/src/Core/ArithmeticSequence.h \
+  /usr/local/include/wpimath/Eigen/src/Core/IO.h \
+  /usr/local/include/wpimath/Eigen/src/Core/DenseCoeffsBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/DenseBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/CommonCwiseUnaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/BlockMethods.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/IndexedViewMethods.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/ReshapedMethods.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/MatrixBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/CommonCwiseBinaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/MatrixCwiseUnaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/MatrixCwiseBinaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/EigenBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Product.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CoreEvaluators.h \
+  /usr/local/include/wpimath/Eigen/src/Core/AssignEvaluator.h \
+  /usr/local/include/wpimath/Eigen/src/Core/RealView.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Assign.h \
+  /usr/local/include/wpimath/Eigen/src/Core/ArrayBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/ArrayCwiseUnaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/../plugins/ArrayCwiseBinaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/Core/util/BlasUtil.h \
+  /usr/local/include/wpimath/Eigen/src/Core/DenseStorage.h \
+  /usr/local/include/wpimath/Eigen/src/Core/NestByValue.h \
+  /usr/local/include/wpimath/Eigen/src/Core/ReturnByValue.h \
+  /usr/local/include/wpimath/Eigen/src/Core/NoAlias.h \
+  /usr/local/include/wpimath/Eigen/src/Core/PlainObjectBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Matrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Array.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Fill.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CwiseTernaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CwiseBinaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CwiseUnaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CwiseNullaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CwiseUnaryView.h \
+  /usr/local/include/wpimath/Eigen/src/Core/SelfCwiseBinaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/Core/InnerProduct.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Dot.h \
+  /usr/local/include/wpimath/Eigen/src/Core/StableNorm.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Stride.h \
+  /usr/local/include/wpimath/Eigen/src/Core/MapBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Map.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Ref.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Block.h \
+  /usr/local/include/wpimath/Eigen/src/Core/VectorBlock.h \
+  /usr/local/include/wpimath/Eigen/src/Core/IndexedView.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Reshaped.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Transpose.h \
+  /usr/local/include/wpimath/Eigen/src/Core/DiagonalMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Diagonal.h \
+  /usr/local/include/wpimath/Eigen/src/Core/DiagonalProduct.h \
+  /usr/local/include/wpimath/Eigen/src/Core/SkewSymmetricMatrix3.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Redux.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Visitor.h \
+  /usr/local/include/wpimath/Eigen/src/Core/FindCoeff.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Fuzzy.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Swap.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CommaInitializer.h \
+  /usr/local/include/wpimath/Eigen/src/Core/GeneralProduct.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Solve.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Inverse.h \
+  /usr/local/include/wpimath/Eigen/src/Core/SolverBase.h \
+  /usr/local/include/wpimath/Eigen/src/Core/PermutationMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Transpositions.h \
+  /usr/local/include/wpimath/Eigen/src/Core/TriangularMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/SelfAdjointView.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/../InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/Core/DeviceWrapper.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/Parallelizer.h \
+  /usr/local/include/wpimath/Eigen/src/Core/ProductEvaluators.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/GeneralMatrixVector.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/SolveTriangular.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/SelfadjointProduct.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/SelfadjointRank2Update.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/TriangularMatrixVector.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/TriangularSolverMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/products/TriangularSolverVector.h \
+  /usr/local/include/wpimath/Eigen/src/Core/BandMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/Core/CoreIterators.h \
+  /usr/local/include/wpimath/Eigen/src/Core/ConditionEstimator.h \
+  /usr/local/include/wpimath/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Select.h \
+  /usr/local/include/wpimath/Eigen/src/Core/VectorwiseOp.h \
+  /usr/local/include/wpimath/Eigen/src/Core/PartialReduxEvaluator.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Random.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Replicate.h \
+  /usr/local/include/wpimath/Eigen/src/Core/Reverse.h \
+  /usr/local/include/wpimath/Eigen/src/Core/ArrayWrapper.h \
+  /usr/local/include/wpimath/Eigen/src/Core/StlIterators.h \
+  /usr/local/include/wpimath/Eigen/src/Core/GlobalFunctions.h \
+  /usr/local/include/wpimath/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /usr/local/include/wpiutil/wpi/SymbolExports.h \
+  /usr/local/include/wpiutil/wpi/json_fwd.h \
+  /usr/local/include/wpiutil/wpi/detail/abi_macros.h \
+  /usr/local/include/wpimath/frc/ct_matrix.h \
+  /usr/local/include/wpimath/gcem.hpp \
+  /usr/local/include/wpimath/gcem_incl/gcem_options.hpp \
+  /usr/local/include/wpimath/gcem_incl/quadrature/gauss_legendre_50.hpp \
+  /usr/local/include/wpimath/gcem_incl/is_inf.hpp \
+  /usr/local/include/wpimath/gcem_incl/is_nan.hpp \
+  /usr/local/include/wpimath/gcem_incl/is_finite.hpp \
+  /usr/local/include/wpimath/gcem_incl/signbit.hpp \
+  /usr/local/include/wpimath/gcem_incl/copysign.hpp \
+  /usr/local/include/wpimath/gcem_incl/neg_zero.hpp \
+  /usr/local/include/wpimath/gcem_incl/sgn.hpp \
+  /usr/local/include/wpimath/gcem_incl/abs.hpp \
+  /usr/local/include/wpimath/gcem_incl/fabs.hpp \
+  /usr/local/include/wpimath/gcem_incl/fabsf.hpp \
+  /usr/local/include/wpimath/gcem_incl/fabsl.hpp \
+  /usr/local/include/wpimath/gcem_incl/ceil.hpp \
+  /usr/local/include/wpimath/gcem_incl/floor.hpp \
+  /usr/local/include/wpimath/gcem_incl/trunc.hpp \
+  /usr/local/include/wpimath/gcem_incl/is_odd.hpp \
+  /usr/local/include/wpimath/gcem_incl/is_even.hpp \
+  /usr/local/include/wpimath/gcem_incl/max.hpp \
+  /usr/local/include/wpimath/gcem_incl/min.hpp \
+  /usr/local/include/wpimath/gcem_incl/sqrt.hpp \
+  /usr/local/include/wpimath/gcem_incl/inv_sqrt.hpp \
+  /usr/local/include/wpimath/gcem_incl/hypot.hpp \
+  /usr/local/include/wpimath/gcem_incl/find_exponent.hpp \
+  /usr/local/include/wpimath/gcem_incl/find_fraction.hpp \
+  /usr/local/include/wpimath/gcem_incl/find_whole.hpp \
+  /usr/local/include/wpimath/gcem_incl/mantissa.hpp \
+  /usr/local/include/wpimath/gcem_incl/round.hpp \
+  /usr/local/include/wpimath/gcem_incl/fmod.hpp \
+  /usr/local/include/wpimath/gcem_incl/pow_integral.hpp \
+  /usr/local/include/wpimath/gcem_incl/exp.hpp \
+  /usr/local/include/wpimath/gcem_incl/expm1.hpp \
+  /usr/local/include/wpimath/gcem_incl/log.hpp \
+  /usr/local/include/wpimath/gcem_incl/log1p.hpp \
+  /usr/local/include/wpimath/gcem_incl/log2.hpp \
+  /usr/local/include/wpimath/gcem_incl/log10.hpp \
+  /usr/local/include/wpimath/gcem_incl/pow.hpp \
+  /usr/local/include/wpimath/gcem_incl/gcd.hpp \
+  /usr/local/include/wpimath/gcem_incl/lcm.hpp \
+  /usr/local/include/wpimath/gcem_incl/tan.hpp \
+  /usr/local/include/wpimath/gcem_incl/cos.hpp \
+  /usr/local/include/wpimath/gcem_incl/sin.hpp \
+  /usr/local/include/wpimath/gcem_incl/atan.hpp \
+  /usr/local/include/wpimath/gcem_incl/atan2.hpp \
+  /usr/local/include/wpimath/gcem_incl/acos.hpp \
+  /usr/local/include/wpimath/gcem_incl/asin.hpp \
+  /usr/local/include/wpimath/gcem_incl/tanh.hpp \
+  /usr/local/include/wpimath/gcem_incl/cosh.hpp \
+  /usr/local/include/wpimath/gcem_incl/sinh.hpp \
+  /usr/local/include/wpimath/gcem_incl/atanh.hpp \
+  /usr/local/include/wpimath/gcem_incl/acosh.hpp \
+  /usr/local/include/wpimath/gcem_incl/asinh.hpp \
+  /usr/local/include/wpimath/gcem_incl/binomial_coef.hpp \
+  /usr/local/include/wpimath/gcem_incl/lgamma.hpp \
+  /usr/local/include/wpimath/gcem_incl/tgamma.hpp \
+  /usr/local/include/wpimath/gcem_incl/factorial.hpp \
+  /usr/local/include/wpimath/gcem_incl/lbeta.hpp \
+  /usr/local/include/wpimath/gcem_incl/beta.hpp \
+  /usr/local/include/wpimath/gcem_incl/lmgamma.hpp \
+  /usr/local/include/wpimath/gcem_incl/log_binomial_coef.hpp \
+  /usr/local/include/wpimath/gcem_incl/erf.hpp \
+  /usr/local/include/wpimath/gcem_incl/erf_inv.hpp \
+  /usr/local/include/wpimath/gcem_incl/incomplete_beta.hpp \
+  /usr/local/include/wpimath/gcem_incl/incomplete_beta_inv.hpp \
+  /usr/local/include/wpimath/gcem_incl/incomplete_gamma.hpp \
+  /usr/local/include/wpimath/gcem_incl/incomplete_gamma_inv.hpp \
+  /usr/local/include/wpimath/frc/geometry/Pose2d.h \
+  /usr/local/include/wpimath/frc/geometry/Rotation2d.h \
+  /usr/local/include/wpiutil/wpi/StackTrace.h \
+  /usr/local/include/wpimath/units/angle.h \
+  /usr/local/include/wpimath/units/base.h \
+  /usr/local/include/wpiutil/fmt/format.h \
+  /usr/local/include/wpiutil/fmt/base.h \
+  /usr/local/include/wpimath/units/formatter.h \
+  /usr/local/include/wpimath/wpimath/MathShared.h \
+  /usr/local/include/wpimath/units/time.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Rotation2dProto.h \
+  /usr/local/include/wpiutil/wpi/protobuf/Protobuf.h \
+  /usr/local/include/wpiutil/pb.h /usr/local/include/wpiutil/pb_decode.h \
+  /usr/local/include/wpiutil/pb_encode.h \
+  /usr/local/include/wpiutil/wpi/array.h \
+  /usr/local/include/wpiutil/wpi/function_ref.h \
+  /usr/local/include/wpimath/wpimath/protobuf/geometry2d.npb.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Rotation2dStruct.h \
+  /usr/local/include/wpiutil/wpi/struct/Struct.h \
+  /usr/local/include/wpiutil/wpi/Endian.h \
+  /usr/local/include/wpiutil/wpi/bit.h \
+  /usr/local/include/wpiutil/wpi/Compiler.h \
+  /usr/local/include/wpiutil/wpi/SwapByteOrder.h \
+  /usr/local/include/wpiutil/wpi/STLForwardCompat.h \
+  /usr/local/include/wpiutil/wpi/ct_string.h \
+  /usr/local/include/wpiutil/wpi/mutex.h \
+  /usr/local/include/wpiutil/wpi/priority_mutex.h \
+  /usr/local/include/wpiutil/wpi/type_traits.h \
+  /usr/local/include/wpimath/frc/geometry/Translation2d.h \
+  /usr/local/include/wpimath/units/area.h \
+  /usr/local/include/wpimath/units/length.h \
+  /usr/local/include/wpimath/units/math.h \
+  /usr/local/include/wpimath/units/dimensionless.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Translation2dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Translation2dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/Twist2d.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Twist2dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Twist2dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Pose2dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Pose2dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/Transform2d.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Transform2dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Transform2dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/Rotation3d.h \
+  /usr/local/include/wpimath/frc/fmt/Eigen.h \
+  /usr/local/include/wpimath/Eigen/SparseCore \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/accumulate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/adjacent_difference.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inner_product.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/iota.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/exclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/gcd_lcm.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/pstl.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/reduce.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/midpoint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/saturation_arithmetic.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_execution_policy.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseUtil.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/./InternalHeaderCheck.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseMatrixBase.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/../plugins/CommonCwiseUnaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/../plugins/CommonCwiseBinaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/../plugins/MatrixCwiseUnaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/../plugins/MatrixCwiseBinaryOps.inc \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/../plugins/BlockMethods.inc \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseAssign.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/CompressedStorage.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/AmbiVector.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseCompressedBase.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseMatrix.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseMap.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseVector.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseRef.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseTranspose.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseBlock.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseDot.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseRedux.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseView.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseProduct.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseDenseProduct.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseTriangularView.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/TriangularSolver.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparsePermutation.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseFuzzy.h \
+  /usr/local/include/wpimath/Eigen/src/SparseCore/SparseSolverBase.h \
+  /usr/local/include/wpimath/frc/geometry/Quaternion.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numbers \
+  /usr/local/include/wpimath/frc/geometry/proto/QuaternionProto.h \
+  /usr/local/include/wpimath/wpimath/protobuf/geometry3d.npb.h \
+  /usr/local/include/wpimath/frc/geometry/struct/QuaternionStruct.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Rotation3dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Rotation3dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/Translation3d.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Translation3dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Translation3dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/Twist3d.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Twist3dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Twist3dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Pose3dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Pose3dStruct.h \
+  /usr/local/include/wpimath/frc/geometry/Transform3d.h \
+  /usr/local/include/wpimath/frc/geometry/proto/Transform3dProto.h \
+  /usr/local/include/wpimath/frc/geometry/struct/Transform3dStruct.h \
+  /Users/sim/Projects/aprilTagDetector/include/json.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ranges \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/all.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/owning_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/range_adaptor.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/common_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/counted.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/drop_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/empty_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/iota_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/non_propagating_cache.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/repeat_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/drop_while_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/elements_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/get.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_like.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/filter_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/join_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/iterator_with_data.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/as_lvalue.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/lazy_split_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/single_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/rbegin.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/rend.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/reverse_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/split_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/take_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/take_while_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/transform_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/views.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/istream_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/any \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream

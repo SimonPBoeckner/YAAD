@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 4.2.1)
-project(MyProject LANGUAGES CXX )
+project(YAAD LANGUAGES CXX )
 
 find_package( OpenCV REQUIRED )
 find_package( apriltag REQUIRED )
+find_package(nlohmann_json REQUIRED)
 find_package( wpilib REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
-include_directories( ${CMAKE_SOURCE_DIR}/include )  # Adjust path if capture.hpp is elsewhere
-add_executable( MyProgram src/main.cpp src/pipeline/capture.cpp src/pipeline/fiducialDetector.cpp src/pipeline/cameraPoseEstimator.cpp )
-target_link_libraries( MyProgram PRIVATE ${OpenCV_LIBS} )
-target_link_libraries( MyProgram PRIVATE apriltag::apriltag )
-target_link_libraries( MyProgram PRIVATE cameraserver ntcore cscore wpiutil wpimath wpilibc hal )
-
+include_directories( ${CMAKE_SOURCE_DIR}/include )
+include_directories( ${CMAKE_SOURCE_DIR}/src/config )
+add_executable( YAAD src/main.cpp src/pipeline/capture.cpp src/pipeline/fiducialDetector.cpp src/pipeline/cameraPoseEstimator.cpp src/pipeline/coordinateChanger.cpp )
+target_link_libraries( YAAD PRIVATE ${OpenCV_LIBS} )
+target_link_libraries( YAAD PRIVATE apriltag::apriltag )
+target_link_libraries( YAAD PRIVATE cameraserver ntcore cscore wpiutil wpimath wpilibc hal )
+target_link_libraries( YAAD PRIVATE nlohmann_json::nlohmann_json)

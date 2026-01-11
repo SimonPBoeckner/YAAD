@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/usr/local/lib/libwpiHal.dylib"
+			"path" : "/usr/local/lib/libwpilibNewCommands.dylib"
 		}
 	],
 	"backtrace" : 9,
@@ -20,8 +20,8 @@
 		],
 		"files" : 
 		[
-			"/usr/local/share/hal/hal.cmake",
-			"/usr/local/share/hal/hal-config.cmake",
+			"/usr/local/share/wpilibNewCommands/wpilibnewcommands.cmake",
+			"/usr/local/share/wpilibNewCommands/wpilibnewcommands-config.cmake",
 			"/Applications/CMake.app/Contents/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake",
 			"/usr/local/share/wpilib/wpilib-config.cmake",
 			"CMakeLists.txt"
@@ -34,7 +34,7 @@
 			{
 				"command" : 2,
 				"file" : 4,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
@@ -44,7 +44,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 11,
+				"line" : 14,
 				"parent" : 2
 			},
 			{
@@ -66,7 +66,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 6,
+				"line" : 11,
 				"parent" : 6
 			},
 			{
@@ -92,25 +92,25 @@
 		"major" : 2,
 		"minor" : 9
 	},
-	"id" : "hal::@6890427a1f51a3e7e1df",
+	"id" : "wpilibNewCommands::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceCompileDependencies" : 
 	[
 		{
 			"backtrace" : 10,
-			"id" : "wpiutil::@6890427a1f51a3e7e1df"
+			"id" : "wpilibc::@6890427a1f51a3e7e1df"
 		}
 	],
 	"interfaceLinkLibraries" : 
 	[
 		{
 			"backtrace" : 10,
-			"id" : "wpiutil::@6890427a1f51a3e7e1df"
+			"id" : "wpilibc::@6890427a1f51a3e7e1df"
 		}
 	],
 	"local" : true,
-	"name" : "hal",
-	"nameOnDisk" : "libwpiHal.dylib",
+	"name" : "wpilibNewCommands",
+	"nameOnDisk" : "libwpilibNewCommands.dylib",
 	"paths" : 
 	{
 		"build" : ".",

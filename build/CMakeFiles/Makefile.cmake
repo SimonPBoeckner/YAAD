@@ -43,6 +43,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/sim/Projects/aprilTagDetector/CMakeLists.txt"
   "CMakeFiles/4.2.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.1/CMakeSystem.cmake"
+  "/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake"
+  "/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake"
+  "/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake"
   "/usr/local/lib/apriltag/cmake/apriltagConfig.cmake"
   "/usr/local/lib/apriltag/cmake/apriltagConfigVersion.cmake"
   "/usr/local/lib/apriltag/cmake/apriltagTargets-release.cmake"
@@ -94,5 +97,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/MyProgram.dir/DependInfo.cmake"
+  "CMakeFiles/YAAD.dir/DependInfo.cmake"
   )

@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/usr/local/lib/libntcore.dylib"
+			"path" : "/usr/local/lib/libwpimath.dylib"
 		}
 	],
 	"backtrace" : 13,
@@ -20,10 +20,10 @@
 		],
 		"files" : 
 		[
-			"/usr/local/share/ntcore/ntcore.cmake",
-			"/usr/local/share/ntcore/ntcore-config.cmake",
+			"/usr/local/share/wpimath/wpimath.cmake",
+			"/usr/local/share/wpimath/wpimath-config.cmake",
 			"/Applications/CMake.app/Contents/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake",
-			"/usr/local/share/cameraserver/cameraserver-config.cmake",
+			"/usr/local/share/wpilibc/wpilibc-config.cmake",
 			"/usr/local/share/wpilib/wpilib-config.cmake",
 			"CMakeLists.txt"
 		],
@@ -35,7 +35,7 @@
 			{
 				"command" : 2,
 				"file" : 5,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
@@ -45,7 +45,7 @@
 			{
 				"command" : 4,
 				"file" : 4,
-				"line" : 9,
+				"line" : 13,
 				"parent" : 2
 			},
 			{
@@ -89,7 +89,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 7,
+				"line" : 10,
 				"parent" : 10
 			},
 			{
@@ -115,14 +115,10 @@
 		"major" : 2,
 		"minor" : 9
 	},
-	"id" : "ntcore::@6890427a1f51a3e7e1df",
+	"id" : "wpimath::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceCompileDependencies" : 
 	[
-		{
-			"backtrace" : 14,
-			"id" : "wpinet::@6890427a1f51a3e7e1df"
-		},
 		{
 			"backtrace" : 14,
 			"id" : "wpiutil::@6890427a1f51a3e7e1df"
@@ -132,16 +128,12 @@
 	[
 		{
 			"backtrace" : 14,
-			"id" : "wpinet::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 14,
 			"id" : "wpiutil::@6890427a1f51a3e7e1df"
 		}
 	],
 	"local" : true,
-	"name" : "ntcore",
-	"nameOnDisk" : "libntcore.dylib",
+	"name" : "wpimath",
+	"nameOnDisk" : "libwpimath.dylib",
 	"paths" : 
 	{
 		"build" : ".",

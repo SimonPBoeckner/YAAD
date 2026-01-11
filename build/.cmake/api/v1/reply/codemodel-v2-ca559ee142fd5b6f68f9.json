@@ -21,28 +21,42 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cameraserver::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cameraserver-Debug-5a0adb4bafda77fcd726.json",
+					"jsonFile" : "target-cameraserver-Debug-15c7d862c202d5989295.json",
 					"name" : "cameraserver",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "cscore::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cscore-Debug-07ef6c95552dc4fcad59.json",
+					"jsonFile" : "target-cscore-Debug-e49a50dcf60f060c0211.json",
 					"name" : "cscore",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "hal::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-hal-Debug-794c096699124e0e6ea0.json",
+					"jsonFile" : "target-hal-Debug-267a9349345835662b85.json",
 					"name" : "hal",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "nlohmann_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nlohmann_json-Debug-04550db4005d18e500d2.json",
+					"name" : "nlohmann_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nlohmann_json::nlohmann_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nlohmann_json__nlohmann_json-Debug-7326215be46b51e7d664.json",
+					"name" : "nlohmann_json::nlohmann_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "ntcore::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ntcore-Debug-cc0a2fb1d28f14081780.json",
+					"jsonFile" : "target-ntcore-Debug-9bfb97261ba67ab089b4.json",
 					"name" : "ntcore",
 					"projectIndex" : 0
 				},
@@ -154,63 +168,63 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "protobuf::libprotobuf::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-protobuf__libprotobuf-Debug-5925b7e75c50caa392d1.json",
+					"jsonFile" : "target-protobuf__libprotobuf-Debug-d3f8fa9c5346010e77a1.json",
 					"name" : "protobuf::libprotobuf",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "protobuf::libprotobuf-lite::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-protobuf__libprotobuf-lite-Debug-86b6cfb460e6893c8d0b.json",
+					"jsonFile" : "target-protobuf__libprotobuf-lite-Debug-f4f4f79d9c2c3e76af13.json",
 					"name" : "protobuf::libprotobuf-lite",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "protobuf::libprotoc::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-protobuf__libprotoc-Debug-5c2419c925caa26ca56d.json",
+					"jsonFile" : "target-protobuf__libprotoc-Debug-ec5aa48fa89c08502641.json",
 					"name" : "protobuf::libprotoc",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "protobuf::protoc::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-protobuf__protoc-Debug-1b96be31edeb8fe2cfab.json",
+					"jsonFile" : "target-protobuf__protoc-Debug-c8c3b4fd3b60e57c393b.json",
 					"name" : "protobuf::protoc",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "wpilibNewCommands::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wpilibNewCommands-Debug-f29105d7d6ad2772b7b0.json",
+					"jsonFile" : "target-wpilibNewCommands-Debug-27639b2e67e1f197e4e7.json",
 					"name" : "wpilibNewCommands",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "wpilibc::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wpilibc-Debug-92c8954cf094eb681bb1.json",
+					"jsonFile" : "target-wpilibc-Debug-e6ba16bbec6ef1126f77.json",
 					"name" : "wpilibc",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "wpimath::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wpimath-Debug-2436e3e5bf9ae0e0a3b0.json",
+					"jsonFile" : "target-wpimath-Debug-760b2416b1fb8c4f1d19.json",
 					"name" : "wpimath",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "wpinet::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wpinet-Debug-de627467ca12a7f2bd4b.json",
+					"jsonFile" : "target-wpinet-Debug-53bbd1845f4cc3e94ea3.json",
 					"name" : "wpinet",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "wpiutil::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wpiutil-Debug-75728251ba6c1a321e64.json",
+					"jsonFile" : "target-wpiutil-Debug-c7b2d6b2c1ac2a7e1095.json",
 					"name" : "wpiutil",
 					"projectIndex" : 0
 				}
@@ -249,7 +263,9 @@
 						26,
 						27,
 						28,
-						29
+						29,
+						30,
+						31
 					],
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-9ad1a58d4644cf6543fa.json",
@@ -300,13 +316,15 @@
 						26,
 						27,
 						28,
-						29
+						29,
+						30,
+						31
 					],
 					"directoryIndexes" : 
 					[
 						0
 					],
-					"name" : "MyProject",
+					"name" : "YAAD",
 					"targetIndexes" : 
 					[
 						0
@@ -317,9 +335,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "MyProgram::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MyProgram-Debug-357f9f10b8328078aa6e.json",
-					"name" : "MyProgram",
+					"id" : "YAAD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-YAAD-Debug-5e069f927f526c06026d.json",
+					"name" : "YAAD",
 					"projectIndex" : 0
 				}
 			]

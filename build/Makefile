@@ -124,24 +124,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MyProgram
+# Target rules for targets named YAAD
 
 # Build rule for target.
-MyProgram: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyProgram
-.PHONY : MyProgram
+YAAD: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 YAAD
+.PHONY : YAAD
 
 # fast build rule for target.
-MyProgram/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/build
-.PHONY : MyProgram/fast
+YAAD/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/build
+.PHONY : YAAD/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -149,7 +149,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -157,7 +157,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/pipeline/cameraPoseEstimator.o: src/pipeline/cameraPoseEstimator.cpp.o
@@ -165,7 +165,7 @@ src/pipeline/cameraPoseEstimator.o: src/pipeline/cameraPoseEstimator.cpp.o
 
 # target to build an object file
 src/pipeline/cameraPoseEstimator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o
 .PHONY : src/pipeline/cameraPoseEstimator.cpp.o
 
 src/pipeline/cameraPoseEstimator.i: src/pipeline/cameraPoseEstimator.cpp.i
@@ -173,7 +173,7 @@ src/pipeline/cameraPoseEstimator.i: src/pipeline/cameraPoseEstimator.cpp.i
 
 # target to preprocess a source file
 src/pipeline/cameraPoseEstimator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.i
 .PHONY : src/pipeline/cameraPoseEstimator.cpp.i
 
 src/pipeline/cameraPoseEstimator.s: src/pipeline/cameraPoseEstimator.cpp.s
@@ -181,7 +181,7 @@ src/pipeline/cameraPoseEstimator.s: src/pipeline/cameraPoseEstimator.cpp.s
 
 # target to generate assembly for a file
 src/pipeline/cameraPoseEstimator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.s
 .PHONY : src/pipeline/cameraPoseEstimator.cpp.s
 
 src/pipeline/capture.o: src/pipeline/capture.cpp.o
@@ -189,7 +189,7 @@ src/pipeline/capture.o: src/pipeline/capture.cpp.o
 
 # target to build an object file
 src/pipeline/capture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/capture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o
 .PHONY : src/pipeline/capture.cpp.o
 
 src/pipeline/capture.i: src/pipeline/capture.cpp.i
@@ -197,7 +197,7 @@ src/pipeline/capture.i: src/pipeline/capture.cpp.i
 
 # target to preprocess a source file
 src/pipeline/capture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/capture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.i
 .PHONY : src/pipeline/capture.cpp.i
 
 src/pipeline/capture.s: src/pipeline/capture.cpp.s
@@ -205,15 +205,39 @@ src/pipeline/capture.s: src/pipeline/capture.cpp.s
 
 # target to generate assembly for a file
 src/pipeline/capture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/capture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.s
 .PHONY : src/pipeline/capture.cpp.s
+
+src/pipeline/coordinateChanger.o: src/pipeline/coordinateChanger.cpp.o
+.PHONY : src/pipeline/coordinateChanger.o
+
+# target to build an object file
+src/pipeline/coordinateChanger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o
+.PHONY : src/pipeline/coordinateChanger.cpp.o
+
+src/pipeline/coordinateChanger.i: src/pipeline/coordinateChanger.cpp.i
+.PHONY : src/pipeline/coordinateChanger.i
+
+# target to preprocess a source file
+src/pipeline/coordinateChanger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.i
+.PHONY : src/pipeline/coordinateChanger.cpp.i
+
+src/pipeline/coordinateChanger.s: src/pipeline/coordinateChanger.cpp.s
+.PHONY : src/pipeline/coordinateChanger.s
+
+# target to generate assembly for a file
+src/pipeline/coordinateChanger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.s
+.PHONY : src/pipeline/coordinateChanger.cpp.s
 
 src/pipeline/fiducialDetector.o: src/pipeline/fiducialDetector.cpp.o
 .PHONY : src/pipeline/fiducialDetector.o
 
 # target to build an object file
 src/pipeline/fiducialDetector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o
 .PHONY : src/pipeline/fiducialDetector.cpp.o
 
 src/pipeline/fiducialDetector.i: src/pipeline/fiducialDetector.cpp.i
@@ -221,7 +245,7 @@ src/pipeline/fiducialDetector.i: src/pipeline/fiducialDetector.cpp.i
 
 # target to preprocess a source file
 src/pipeline/fiducialDetector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.i
 .PHONY : src/pipeline/fiducialDetector.cpp.i
 
 src/pipeline/fiducialDetector.s: src/pipeline/fiducialDetector.cpp.s
@@ -229,7 +253,7 @@ src/pipeline/fiducialDetector.s: src/pipeline/fiducialDetector.cpp.s
 
 # target to generate assembly for a file
 src/pipeline/fiducialDetector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProgram.dir/build.make CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/YAAD.dir/build.make CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.s
 .PHONY : src/pipeline/fiducialDetector.cpp.s
 
 # Help Target
@@ -241,7 +265,7 @@ help:
 	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MyProgram"
+	@echo "... YAAD"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -251,6 +275,9 @@ help:
 	@echo "... src/pipeline/capture.o"
 	@echo "... src/pipeline/capture.i"
 	@echo "... src/pipeline/capture.s"
+	@echo "... src/pipeline/coordinateChanger.o"
+	@echo "... src/pipeline/coordinateChanger.i"
+	@echo "... src/pipeline/coordinateChanger.s"
 	@echo "... src/pipeline/fiducialDetector.o"
 	@echo "... src/pipeline/fiducialDetector.i"
 	@echo "... src/pipeline/fiducialDetector.s"

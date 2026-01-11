@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=MyProject
+CMAKE_PROJECT_NAME:STATIC=YAAD
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -263,6 +263,15 @@ Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=/opt/homebrew/lib/libprotoc.dylib
 //Path to a library.
 Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/opt/homebrew/lib/libprotoc.dylib
 
+//Value Computed by CMake
+YAAD_BINARY_DIR:STATIC=/Users/sim/Projects/aprilTagDetector/build
+
+//Value Computed by CMake
+YAAD_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+YAAD_SOURCE_DIR:STATIC=/Users/sim/Projects/aprilTagDetector
+
 //The directory containing a CMake configuration file for apriltag.
 apriltag_DIR:PATH=/usr/local/lib/apriltag/cmake
 
@@ -274,6 +283,9 @@ cscore_DIR:PATH=/usr/local/share/cscore
 
 //The directory containing a CMake configuration file for hal.
 hal_DIR:PATH=/usr/local/share/hal
+
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/opt/homebrew/share/cmake/nlohmann_json
 
 //The directory containing a CMake configuration file for ntcore.
 ntcore_DIR:PATH=/usr/local/share/ntcore
@@ -450,6 +462,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.14.0()]
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/opt/homebrew/lib/libprotobuf.dylib][/opt/homebrew/include][v6.33.2()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
 //ADVANCED property for variable: Protobuf_INCLUDE_DIR
 Protobuf_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Protobuf_LIBRARY_DEBUG

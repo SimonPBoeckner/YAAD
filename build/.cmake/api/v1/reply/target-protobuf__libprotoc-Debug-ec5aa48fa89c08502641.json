@@ -28,7 +28,7 @@
 			{
 				"command" : 1,
 				"file" : 5,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
@@ -104,13 +104,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 1054,
+				"line" : 1087,
 				"parent" : 14
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 1079,
+				"line" : 1117,
 				"parent" : 14
 			}
 		]
@@ -120,7 +120,7 @@
 		"major" : 2,
 		"minor" : 9
 	},
-	"id" : "protobuf::libprotobuf-lite::@6890427a1f51a3e7e1df",
+	"id" : "protobuf::libprotoc::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceCompileDependencies" : 
 	[
@@ -137,7 +137,7 @@
 		}
 	],
 	"local" : true,
-	"name" : "protobuf::libprotobuf-lite",
+	"name" : "protobuf::libprotoc",
 	"paths" : 
 	{
 		"build" : ".",

@@ -1,7 +1,9 @@
 #pragma once
 #include <apriltag/apriltag.h>
 #include <opencv2/opencv.hpp>
-#include "json.hpp"
+#include "frc/geometry/Pose3d.h"
+#include <vector>
+#include <nlohmann/json.hpp>
 
 class CameraPoseEstimator {
 public:
@@ -11,11 +13,16 @@ public:
     virtual void SolveCameraPose(zarray_t* detections);
 
 protected:
-    json jason;
+    nlohmann::json jason;
 
     float fid_size;
-    zarray_t object_points;
-    zarray_t frame_points;
-    zarray_t tag_ids;
-    zarray_t tag_poses;
+    std::vector<std::vector<units::meter_t>> object_points;
+    std::vector<std::vector<units::meter_t>> frame_points;
+    std::vector<int> tag_ids;
+    std::vector<frc::Pose3d> tag_poses;
+};
+
+class MultiTagCameraPoseEstimator: public CameraPoseEstimator {
+public:
+    void SolveCameraPose(zarray_t* detections) override;
 };

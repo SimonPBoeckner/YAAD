@@ -1,4 +1,4 @@
-CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.o: \
+CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o: \
   /Users/sim/Projects/aprilTagDetector/src/pipeline/fiducialDetector.cpp \
   /Users/sim/Projects/aprilTagDetector/include/fiducialDetector.hpp \
   /usr/local/include/apriltag/apriltag.h \

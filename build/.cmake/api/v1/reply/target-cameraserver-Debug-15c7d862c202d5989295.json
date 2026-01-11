@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/usr/local/lib/libwpilibc.dylib"
+			"path" : "/usr/local/lib/libcameraserver.dylib"
 		}
 	],
 	"backtrace" : 9,
@@ -20,8 +20,8 @@
 		],
 		"files" : 
 		[
-			"/usr/local/share/wpilibc/wpilibc.cmake",
-			"/usr/local/share/wpilibc/wpilibc-config.cmake",
+			"/usr/local/share/cameraserver/cameraserver.cmake",
+			"/usr/local/share/cameraserver/cameraserver-config.cmake",
 			"/Applications/CMake.app/Contents/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake",
 			"/usr/local/share/wpilib/wpilib-config.cmake",
 			"CMakeLists.txt"
@@ -34,7 +34,7 @@
 			{
 				"command" : 2,
 				"file" : 4,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
@@ -44,7 +44,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 13,
+				"line" : 9,
 				"parent" : 2
 			},
 			{
@@ -66,7 +66,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 11,
+				"line" : 9,
 				"parent" : 6
 			},
 			{
@@ -92,17 +92,21 @@
 		"major" : 2,
 		"minor" : 9
 	},
-	"id" : "wpilibc::@6890427a1f51a3e7e1df",
+	"id" : "cameraserver::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceCompileDependencies" : 
 	[
 		{
 			"backtrace" : 10,
-			"id" : "cameraserver::@6890427a1f51a3e7e1df"
+			"id" : "ntcore::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 10,
 			"id" : "cscore::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "wpiutil::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 10,
@@ -163,33 +167,21 @@
 		{
 			"backtrace" : 10,
 			"id" : "opencv_videoio::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "hal::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "ntcore::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "wpimath::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "wpiutil::@6890427a1f51a3e7e1df"
 		}
 	],
 	"interfaceLinkLibraries" : 
 	[
 		{
 			"backtrace" : 10,
-			"id" : "cameraserver::@6890427a1f51a3e7e1df"
+			"id" : "ntcore::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 10,
 			"id" : "cscore::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "wpiutil::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 10,
@@ -250,27 +242,11 @@
 		{
 			"backtrace" : 10,
 			"id" : "opencv_videoio::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "hal::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "ntcore::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "wpimath::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 10,
-			"id" : "wpiutil::@6890427a1f51a3e7e1df"
 		}
 	],
 	"local" : true,
-	"name" : "wpilibc",
-	"nameOnDisk" : "libwpilibc.dylib",
+	"name" : "cameraserver",
+	"nameOnDisk" : "libcameraserver.dylib",
 	"paths" : 
 	{
 		"build" : ".",

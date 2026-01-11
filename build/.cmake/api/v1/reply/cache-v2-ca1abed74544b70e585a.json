@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "MyProject"
+			"value" : "YAAD"
 		},
 		{
 			"name" : "CMAKE_PROJECT_SPDX_LICENSE",
@@ -1222,6 +1222,18 @@
 			"value" : "[TRUE][v()]"
 		},
 		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding nlohmann_json"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]"
+		},
+		{
 			"name" : "MyProject_BINARY_DIR",
 			"properties" : 
 			[
@@ -1434,6 +1446,42 @@
 			"value" : "/opt/homebrew/lib/libprotoc.dylib"
 		},
 		{
+			"name" : "YAAD_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/sim/Projects/aprilTagDetector/build"
+		},
+		{
+			"name" : "YAAD_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "YAAD_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/sim/Projects/aprilTagDetector"
+		},
+		{
 			"name" : "apriltag_DIR",
 			"properties" : 
 			[
@@ -1480,6 +1528,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/local/share/hal"
+		},
+		{
+			"name" : "nlohmann_json_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for nlohmann_json."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/homebrew/share/cmake/nlohmann_json"
 		},
 		{
 			"name" : "ntcore_DIR",
