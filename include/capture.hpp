@@ -7,7 +7,7 @@ public:
     virtual ~Capture();
 
     virtual bool Init(int camIndex = 0); // TODO: make this take a config object
-    virtual bool ConfigChanged(); // TODO: check if local config and remote config are different restarts capture to apply new settings
+    // virtual bool ConfigChanged(); // TODO: check if local config and remote config are different restarts capture to apply new settings
     virtual cv::Mat GetFrame();
 
 protected:

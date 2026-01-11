@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/sim/Projects/aprilTagDetector/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag
+CXX_INCLUDES = -I/Users/sim/Projects/aprilTagDetector/include -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cscore -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal
 
-CXX_FLAGSarm64 = -g -arch arm64
+CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64
 
-CXX_FLAGS = -g -arch arm64
+CXX_FLAGS = -g -std=gnu++20 -arch arm64
 

@@ -143,6 +143,12 @@ MyProgram: CMakeFiles/MyProgram.dir/src/pipeline/capture.cpp.o
 MyProgram: CMakeFiles/MyProgram.dir/src/pipeline/fiducialDetector.cpp.o
 MyProgram: CMakeFiles/MyProgram.dir/src/pipeline/cameraPoseEstimator.cpp.o
 MyProgram: CMakeFiles/MyProgram.dir/build.make
+MyProgram: /usr/local/lib/libapriltag.3.4.5.dylib
+MyProgram: /usr/local/lib/libwpilibc.dylib
+MyProgram: /usr/local/lib/libwpiHal.dylib
+MyProgram: /usr/local/lib/libcameraserver.dylib
+MyProgram: /usr/local/lib/libntcore.dylib
+MyProgram: /usr/local/lib/libcscore.dylib
 MyProgram: /usr/local/lib/libopencv_gapi.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_highgui.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_ml.4.14.0.dylib
@@ -150,15 +156,18 @@ MyProgram: /usr/local/lib/libopencv_objdetect.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_photo.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_stitching.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_video.4.14.0.dylib
-MyProgram: /usr/local/lib/libopencv_videoio.4.14.0.dylib
-MyProgram: /usr/local/lib/libapriltag.3.4.5.dylib
-MyProgram: /usr/local/lib/libopencv_imgcodecs.4.14.0.dylib
-MyProgram: /usr/local/lib/libopencv_dnn.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_calib3d.4.14.0.dylib
+MyProgram: /usr/local/lib/libopencv_dnn.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_features2d.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_flann.4.14.0.dylib
+MyProgram: /usr/local/lib/libopencv_videoio.4.14.0.dylib
+MyProgram: /usr/local/lib/libopencv_imgcodecs.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_imgproc.4.14.0.dylib
 MyProgram: /usr/local/lib/libopencv_core.4.14.0.dylib
+MyProgram: /usr/local/lib/libwpinet.dylib
+MyProgram: /usr/local/lib/libwpimath.dylib
+MyProgram: /usr/local/lib/libwpiutil.dylib
+MyProgram: /opt/homebrew/lib/libprotobuf.dylib
 MyProgram: CMakeFiles/MyProgram.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sim/Projects/aprilTagDetector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MyProgram"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyProgram.dir/link.txt --verbose=$(VERBOSE)

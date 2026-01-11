@@ -239,8 +239,62 @@ Project_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/Users/sim/Projects/aprilTagDetector
 
+//Path to a file.
+Protobuf_INCLUDE_DIR:PATH=/opt/homebrew/include
+
+//Path to a library.
+Protobuf_LIBRARY_DEBUG:FILEPATH=/opt/homebrew/lib/libprotobuf.dylib
+
+//Path to a library.
+Protobuf_LIBRARY_RELEASE:FILEPATH=/opt/homebrew/lib/libprotobuf.dylib
+
+//Path to a library.
+Protobuf_LITE_LIBRARY_DEBUG:FILEPATH=/opt/homebrew/lib/libprotobuf-lite.dylib
+
+//Path to a library.
+Protobuf_LITE_LIBRARY_RELEASE:FILEPATH=/opt/homebrew/lib/libprotobuf-lite.dylib
+
+//The Google Protocol Buffers Compiler
+Protobuf_PROTOC_EXECUTABLE:FILEPATH=/opt/homebrew/bin/protoc
+
+//Path to a library.
+Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=/opt/homebrew/lib/libprotoc.dylib
+
+//Path to a library.
+Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/opt/homebrew/lib/libprotoc.dylib
+
 //The directory containing a CMake configuration file for apriltag.
 apriltag_DIR:PATH=/usr/local/lib/apriltag/cmake
+
+//The directory containing a CMake configuration file for cameraserver.
+cameraserver_DIR:PATH=/usr/local/share/cameraserver
+
+//The directory containing a CMake configuration file for cscore.
+cscore_DIR:PATH=/usr/local/share/cscore
+
+//The directory containing a CMake configuration file for hal.
+hal_DIR:PATH=/usr/local/share/hal
+
+//The directory containing a CMake configuration file for ntcore.
+ntcore_DIR:PATH=/usr/local/share/ntcore
+
+//The directory containing a CMake configuration file for wpilibNewCommands.
+wpilibNewCommands_DIR:PATH=/usr/local/share/wpilibNewCommands
+
+//The directory containing a CMake configuration file for wpilib.
+wpilib_DIR:PATH=/usr/local/share/wpilib
+
+//The directory containing a CMake configuration file for wpilibc.
+wpilibc_DIR:PATH=/usr/local/share/wpilibc
+
+//The directory containing a CMake configuration file for wpimath.
+wpimath_DIR:PATH=/usr/local/share/wpimath
+
+//The directory containing a CMake configuration file for wpinet.
+wpinet_DIR:PATH=/usr/local/share/wpinet
+
+//The directory containing a CMake configuration file for wpiutil.
+wpiutil_DIR:PATH=/usr/local/share/wpiutil
 
 
 ########################
@@ -392,6 +446,24 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.14.0()]
+//Details about finding Protobuf
+FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/opt/homebrew/lib/libprotobuf.dylib][/opt/homebrew/include][v6.33.2()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: Protobuf_INCLUDE_DIR
+Protobuf_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LIBRARY_DEBUG
+Protobuf_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LIBRARY_RELEASE
+Protobuf_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LITE_LIBRARY_DEBUG
+Protobuf_LITE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LITE_LIBRARY_RELEASE
+Protobuf_LITE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_PROTOC_EXECUTABLE
+Protobuf_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_DEBUG
+Protobuf_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_RELEASE
+Protobuf_PROTOC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 
