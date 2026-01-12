@@ -9,5 +9,5 @@
 #include "frc/geometry/Rotation3d.h"
 #include "frc/geometry/Quaternion.h"
 
-frc::Pose3d OpenCVPoseToWpiLib(const cv::Mat& tvec, const cv::Mat& rvec);
+frc::Pose3d OpenCVPoseToWPILib(const std::vector<cv::Mat>& tvec, const std::vector<cv::Mat>& rvec);
 std::vector<double> WPILibTranslationToOpenCV(const frc::Translation3d& translation);

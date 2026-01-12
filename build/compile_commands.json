@@ -1,32 +1,32 @@
 [
 {
   "directory": "/Users/sim/Projects/aprilTagDetector/build",
-  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cscore -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/main.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/main.cpp",
+  "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/main.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/main.cpp",
   "file": "/Users/sim/Projects/aprilTagDetector/src/main.cpp",
-  "output": "CMakeFiles/YAAD.dir/src/main.cpp.o"
+  "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/main.cpp.o"
 },
 {
   "directory": "/Users/sim/Projects/aprilTagDetector/build",
-  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cscore -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/capture.cpp",
+  "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/capture.cpp",
   "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/capture.cpp",
-  "output": "CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o"
+  "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o"
 },
 {
   "directory": "/Users/sim/Projects/aprilTagDetector/build",
-  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cscore -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/fiducialDetector.cpp",
+  "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/fiducialDetector.cpp",
   "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/fiducialDetector.cpp",
-  "output": "CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o"
+  "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o"
 },
 {
   "directory": "/Users/sim/Projects/aprilTagDetector/build",
-  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cscore -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/cameraPoseEstimator.cpp",
+  "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/cameraPoseEstimator.cpp",
   "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/cameraPoseEstimator.cpp",
-  "output": "CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o"
+  "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o"
 },
 {
   "directory": "/Users/sim/Projects/aprilTagDetector/build",
-  "command": "/usr/bin/clang++  -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cscore -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/coordinateChanger.cpp",
+  "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/coordinateChanger.cpp",
   "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/coordinateChanger.cpp",
-  "output": "CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o"
+  "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o"
 }
 ]

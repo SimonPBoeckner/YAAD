@@ -9,7 +9,13 @@
 #include <fstream>
 #include "coordinateChanger.hpp"
 #include "opencv2/opencv.hpp"
+#include "apriltag/apriltag.h"
 using json = nlohmann::json;
+
+// extern "C" {
+// #include "apriltag.h"
+// #include "tag36h11.h"
+// }
 
 CameraPoseEstimator::CameraPoseEstimator() {
     std::ifstream file("config.json");
@@ -22,13 +28,13 @@ CameraPoseEstimator::CameraPoseEstimator() {
 }
 
 CameraPoseEstimator::~CameraPoseEstimator() {}
-void CameraPoseEstimator::SolveCameraPose(zarray_t* detections) {}
+CameraPoseObject CameraPoseEstimator::SolveCameraPose(zarray_t* detections) {}
 
-void MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
-    // if (field_layou == nullptr) return nothing
+CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
+    // if (field_layout == nullptr) return nothing
 
     if (detections == nullptr || zarray_size(detections) == 0) {
-        return;
+        return CameraPoseObject{};
     }
 
     MultiTagCameraPoseEstimator::fid_size = 0.162f; // in meters
@@ -119,9 +125,6 @@ void MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
             object_points.push_back(cv::Point3d(fid_size / 2.0, -fid_size / 2.0, 0.0));
             object_points.push_back(cv::Point3d(-fid_size / 2.0, -fid_size / 2.0, 0.0));
 
-            std::vector<cv::Mat> rvecs, tvecs;
-            std::vector<double> reprojErrors;
-
             try {
                 cv::solvePnPGeneric(
                     object_points,
@@ -142,8 +145,8 @@ void MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
             }
 
             frc::Pose3d field_to_tag_pose = tag_poses[0];
-            frc::Pose3d camera_to_tag_pose_0 = OpenCVPoseToWpiLib(tvecs[0], rvecs[0]);
-            frc::Pose3d camera_to_tag_pose_1 = OpenCVPoseToWpiLib(tvecs[1], rvecs[1]);
+            frc::Pose3d camera_to_tag_pose_0 = OpenCVPoseToWPILib(tvecs[0], rvecs[0]);
+            frc::Pose3d camera_to_tag_pose_1 = OpenCVPoseToWPILib(tvecs[1], rvecs[1]);
             frc::Transform3d camera_to_tag_0 = {camera_to_tag_pose_0.Translation(), camera_to_tag_pose_0.Rotation()};
             frc::Transform3d camera_to_tag_1 = {camera_to_tag_pose_1.Translation(), camera_to_tag_pose_1.Rotation()};
             frc::Pose3d field_to_camera_0 = field_to_tag_pose.TransformBy(
@@ -160,6 +163,48 @@ void MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
                 field_to_field_1.Translation(),
                 field_to_field_1.Rotation()
             };
+
+            return CameraPoseObject{
+                .tag_ids = tag_ids,
+                .pose_0 = field_to_camera_pose_0,
+                .error_0 = reprojErrors[0],
+                .pose_1 = field_to_camera_pose_1,
+                .error_1 = reprojErrors[1]
+            };
+        }
+        else {
+            try {
+                cv::solvePnPGeneric(
+                    object_points,
+                    frame_points,
+                    cameraMatrix,
+                    distCoeffs,
+                    rvecs,
+                    tvecs,
+                    false,
+                    cv::SOLVEPNP_SQPNP,
+                    cv::noArray(),
+                    cv::noArray(),
+                    reprojErrors
+                );
+
+                frc::Pose3d camera_to_field_pose = OpenCVPoseToWPILib(tvecs[0], rvecs[0]);
+                frc::Transform3d camera_to_field = {camera_to_field_pose.Translation(), camera_to_field_pose.Rotation()};
+                frc::Transform3d field_to_camera = camera_to_field.Inverse();
+                frc::Pose3d field_to_camera_pose = {
+                    field_to_camera.Translation(),
+                    field_to_camera.Rotation()
+                };
+
+                return CameraPoseObject{
+                    .tag_ids = tag_ids,
+                    .pose_0 = field_to_camera_pose,
+                    .error_0 = reprojErrors[0]
+                };
+            }
+            catch (const cv::Exception& e) {
+                std::cerr << "OpenCV Exception: " << e.what() << std::endl;
+            }
         }
     }
 }

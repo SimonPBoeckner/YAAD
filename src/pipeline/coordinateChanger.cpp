@@ -2,7 +2,7 @@
 #include <vector>
 
 #include <opencv2/opencv.hpp>
-
+#include "apriltag/apriltag.h"
 #include "frc/geometry/Pose3d.h"
 #include "frc/geometry/Translation3d.h"
 #include "frc/geometry/Rotation3d.h"
@@ -11,20 +11,20 @@
 
 using namespace frc;
 
-frc::Pose3d OpenCVPoseToWPILib(const cv::Mat& tvec, const cv::Mat& rvec) {
+frc::Pose3d OpenCVPoseToWPILib(const std::vector<cv::Mat>& tvec, const std::vector<cv::Mat>& rvec) {
     // Extract values
-    double tx = tvec.at<double>(2, 0);
-    double ty = -tvec.at<double>(0, 0);
-    double tz = -tvec.at<double>(1, 0);
+    double tx = tvec[0].at<double>(2, 0);
+    double ty = -tvec[0].at<double>(0, 0);
+    double tz = -tvec[0].at<double>(1, 0);
 
-    double rx = rvec.at<double>(2, 0);
-    double ry = -rvec.at<double>(0, 0);
-    double rz = -rvec.at<double>(1, 0);
+    double rx = rvec[0].at<double>(2, 0);
+    double ry = -rvec[0].at<double>(0, 0);
+    double rz = -rvec[0].at<double>(1, 0);
 
     double angle = std::sqrt(
-        std::pow(rvec.at<double>(0, 0), 2) +
-        std::pow(rvec.at<double>(1, 0), 2) +
-        std::pow(rvec.at<double>(2, 0), 2)
+        std::pow(rvec[0].at<double>(0, 0), 2) +
+        std::pow(rvec[0].at<double>(1, 0), 2) +
+        std::pow(rvec[0].at<double>(2, 0), 2)
     );
 
     return frc::Pose3d(

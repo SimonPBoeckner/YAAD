@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include "frc/geometry/Pose3d.h"
 #include <vector>
+#include "dataTypes.hpp"
 #include <nlohmann/json.hpp>
 
 class CameraPoseEstimator {
@@ -10,7 +11,7 @@ public:
     CameraPoseEstimator();
     virtual ~CameraPoseEstimator();
 
-    virtual void SolveCameraPose(zarray_t* detections);
+    virtual CameraPoseObject SolveCameraPose(zarray_t* detections);
 
 protected:
     nlohmann::json jason;
@@ -28,9 +29,12 @@ protected:
     );
 
     cv::Mat distCoeffs = cv::Mat::zeros(5, 1, CV_64F);
+    std::vector<cv::Mat> rvecs;
+    std::vector<cv::Mat> tvecs;
+    std::vector<double> reprojErrors;
 };
 
 class MultiTagCameraPoseEstimator: public CameraPoseEstimator {
 public:
-    void SolveCameraPose(zarray_t* detections) override;
+    CameraPoseObject SolveCameraPose(zarray_t* detections) override;
 };

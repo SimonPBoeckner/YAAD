@@ -1,0 +1,7 @@
+# ninja log v7
+1	1203	1768187314303201950	CMakeFiles/YAAD.dir/src/main.cpp.o	7e9b52383d47a40
+1	1206	1768187314303455824	CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o	d9b18db522325bf3
+1	1207	1768187314303618866	CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o	bf2fe9431a2a7cf8
+6	1966	1768187686050292118	CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o	921877853709b3ac
+6	2454	1768187686049994951	CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o	6e57ec89526dca5b
+2454	2560	1768187688497511604	YAAD	6fa2426ce9165174

@@ -1,5 +1,11 @@
 #include "fiducialDetector.hpp"
 #include <apriltag/apriltag.h>
+#include <apriltag/tag36h11.h>
+
+// extern "C" {
+// #include "apriltag.h"
+// #include "tag36h11.h"
+// }
 
 FiducialDetector::FiducialDetector() {
     tf = tag36h11_create();

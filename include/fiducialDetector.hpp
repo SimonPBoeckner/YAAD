@@ -3,6 +3,11 @@
 #include <apriltag/tag36h11.h>
 #include <opencv2/opencv.hpp>
 
+// extern "C" {
+// #include "apriltag.h"
+// #include "tag36h11.h"
+// }
+
 class FiducialDetector {
 public:
     FiducialDetector();
