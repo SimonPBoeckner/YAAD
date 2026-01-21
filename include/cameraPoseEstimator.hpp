@@ -15,12 +15,14 @@ public:
 
 protected:
     nlohmann::json jason;
-
+    bool found = true;
     float fid_size;
     std::vector<cv::Point3d> object_points;
     std::vector<cv::Point2d> frame_points;
     std::vector<int> tag_ids;
     std::vector<frc::Pose3d> tag_poses;
+
+    frc::Pose3d corner_0;
 
     cv::Mat cameraMatrix = (cv::Mat_<double>(3,3) <<
         600, 0, 320,

@@ -28,5 +28,11 @@
   "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/coordinateChanger.cpp",
   "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/coordinateChanger.cpp",
   "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o"
+},
+{
+  "directory": "/Users/sim/Projects/aprilTagDetector/build",
+  "command": "/usr/bin/clang++ -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal -g -std=gnu++20 -arch arm64 -o CMakeFiles/YAAD.dir/src/pipeline/poseEstimator.cpp.o -c /Users/sim/Projects/aprilTagDetector/src/pipeline/poseEstimator.cpp",
+  "file": "/Users/sim/Projects/aprilTagDetector/src/pipeline/poseEstimator.cpp",
+  "output": "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/YAAD.dir/src/pipeline/poseEstimator.cpp.o"
 }
 ]

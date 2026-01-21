@@ -94,6 +94,15 @@ build CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o: CXX_COMPILER__YA
   OBJECT_FILE_DIR = CMakeFiles/YAAD.dir/src/pipeline
   TARGET_SUPPORT_DIR = CMakeFiles/YAAD.dir
 
+build CMakeFiles/YAAD.dir/src/pipeline/poseEstimator.cpp.o: CXX_COMPILER__YAAD_unscanned_Debug /Users/sim/Projects/aprilTagDetector/src/pipeline/poseEstimator.cpp || cmake_object_order_depends_target_YAAD
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/YAAD.dir/src/pipeline/poseEstimator.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64
+  INCLUDES = -I/Users/sim/Projects/aprilTagDetector/include -I/Users/sim/Projects/aprilTagDetector/src/config -isystem /usr/local/include/opencv4 -isystem /usr/local/include/apriltag -isystem /usr/local/include/wpimath -isystem /usr/local/include/wpiutil -isystem /opt/homebrew/include -isystem /usr/local/include/cameraserver -isystem /usr/local/include/ntcore -isystem /usr/local/include/wpinet -isystem /usr/local/include/cscore -isystem /usr/local/include/wpilibc -isystem /usr/local/include/hal
+  OBJECT_DIR = CMakeFiles/YAAD.dir
+  OBJECT_FILE_DIR = CMakeFiles/YAAD.dir/src/pipeline
+  TARGET_SUPPORT_DIR = CMakeFiles/YAAD.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target YAAD
@@ -102,7 +111,7 @@ build CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o: CXX_COMPILER__YA
 #############################################
 # Link the executable YAAD
 
-build YAAD: CXX_EXECUTABLE_LINKER__YAAD_Debug CMakeFiles/YAAD.dir/src/main.cpp.o CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o | /usr/local/lib/libapriltag.dylib /usr/local/lib/libwpilibc.dylib /usr/local/lib/libwpiHal.dylib /usr/local/lib/libcameraserver.dylib /usr/local/lib/libntcore.dylib /usr/local/lib/libcscore.dylib /usr/local/lib/libopencv_gapi.4.14.0.dylib /usr/local/lib/libopencv_highgui.4.14.0.dylib /usr/local/lib/libopencv_ml.4.14.0.dylib /usr/local/lib/libopencv_objdetect.4.14.0.dylib /usr/local/lib/libopencv_photo.4.14.0.dylib /usr/local/lib/libopencv_stitching.4.14.0.dylib /usr/local/lib/libopencv_video.4.14.0.dylib /usr/local/lib/libopencv_calib3d.4.14.0.dylib /usr/local/lib/libopencv_dnn.4.14.0.dylib /usr/local/lib/libopencv_features2d.4.14.0.dylib /usr/local/lib/libopencv_flann.4.14.0.dylib /usr/local/lib/libopencv_videoio.4.14.0.dylib /usr/local/lib/libopencv_imgcodecs.4.14.0.dylib /usr/local/lib/libopencv_imgproc.4.14.0.dylib /usr/local/lib/libopencv_core.4.14.0.dylib /usr/local/lib/libwpinet.dylib /usr/local/lib/libwpimath.dylib /usr/local/lib/libwpiutil.dylib /opt/homebrew/lib/libprotobuf.dylib
+build YAAD: CXX_EXECUTABLE_LINKER__YAAD_Debug CMakeFiles/YAAD.dir/src/main.cpp.o CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o CMakeFiles/YAAD.dir/src/pipeline/poseEstimator.cpp.o | /usr/local/lib/libapriltag.dylib /usr/local/lib/libwpilibc.dylib /usr/local/lib/libwpiHal.dylib /usr/local/lib/libcameraserver.dylib /usr/local/lib/libntcore.dylib /usr/local/lib/libcscore.dylib /usr/local/lib/libopencv_gapi.4.14.0.dylib /usr/local/lib/libopencv_highgui.4.14.0.dylib /usr/local/lib/libopencv_ml.4.14.0.dylib /usr/local/lib/libopencv_objdetect.4.14.0.dylib /usr/local/lib/libopencv_photo.4.14.0.dylib /usr/local/lib/libopencv_stitching.4.14.0.dylib /usr/local/lib/libopencv_video.4.14.0.dylib /usr/local/lib/libopencv_calib3d.4.14.0.dylib /usr/local/lib/libopencv_dnn.4.14.0.dylib /usr/local/lib/libopencv_features2d.4.14.0.dylib /usr/local/lib/libopencv_flann.4.14.0.dylib /usr/local/lib/libopencv_videoio.4.14.0.dylib /usr/local/lib/libopencv_imgcodecs.4.14.0.dylib /usr/local/lib/libopencv_imgproc.4.14.0.dylib /usr/local/lib/libopencv_core.4.14.0.dylib /usr/local/lib/libwpinet.dylib /usr/local/lib/libwpimath.dylib /usr/local/lib/libwpiutil.dylib /opt/homebrew/lib/libprotobuf.dylib
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names

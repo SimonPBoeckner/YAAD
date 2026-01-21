@@ -18,7 +18,7 @@ using json = nlohmann::json;
 // }
 
 CameraPoseEstimator::CameraPoseEstimator() {
-    std::ifstream file("config.json");
+    std::ifstream file("/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json");
     if (!file.is_open()) {
         std::cerr << "Failed to open config.json\n";
         return;
@@ -28,7 +28,9 @@ CameraPoseEstimator::CameraPoseEstimator() {
 }
 
 CameraPoseEstimator::~CameraPoseEstimator() {}
-CameraPoseObject CameraPoseEstimator::SolveCameraPose(zarray_t* detections) {}
+CameraPoseObject CameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
+    return CameraPoseObject{};
+}
 
 CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
     // if (field_layout == nullptr) return nothing
@@ -37,33 +39,28 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
         return CameraPoseObject{};
     }
 
-    MultiTagCameraPoseEstimator::fid_size = 0.162f; // in meters
+    fid_size = 0.162f;
 
     for (int i = 0; i < zarray_size(detections); i++) {
         frc::Pose3d tag_pose;
         apriltag_detection_t* det;
         zarray_get(detections, i, &det);
 
-        for (int j = 0; j < MultiTagCameraPoseEstimator::jason["tags"].size(); j++) {
-            if (MultiTagCameraPoseEstimator::jason["tags"][j]["id"] == det->id) {
+        for (int j = 0; j < jason["tags"].size(); j++) {
+            if (int(jason["tags"][j]["ID"]) == int(det->id)) {
                 tag_pose = frc::Pose3d(
-                    frc::Translation3d(units::meter_t(MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["x"]), 
-                                       units::meter_t(MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["y"]), 
-                                       units::meter_t(MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["z"])),
+                    frc::Translation3d(units::meter_t(jason["tags"][j]["pose"]["translation"]["x"]), 
+                                       units::meter_t(jason["tags"][j]["pose"]["translation"]["y"]), 
+                                       units::meter_t(jason["tags"][j]["pose"]["translation"]["z"])),
                     frc::Rotation3d(
                         frc::Quaternion(
-                            MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["qw"], 
-                            MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["qx"], 
-                            MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["qy"], 
-                            MultiTagCameraPoseEstimator::jason["tags"][j]["pose"]["qz"]
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["W"], 
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["X"], 
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["Y"], 
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["Z"]
                         )
                     )
                 );
-                break;
-            }
-
-            if (tag_pose == frc::Pose3d()) {
-                
                 frc::Pose3d corner_0 = tag_pose + frc::Transform3d(
                     frc::Translation3d(units::meter_t(fid_size / 2), units::meter_t(-fid_size / 2), 0_m),
                     frc::Rotation3d()
@@ -114,16 +111,28 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
                 frame_points.push_back(cv::Point2d(det->p[2][0], det->p[2][1]));
                 frame_points.push_back(cv::Point2d(det->p[3][0], det->p[3][1]));
 
-                tag_ids.push_back(det->id);
+                tag_ids.push_back(int(det->id));
                 tag_poses.push_back(tag_pose);
+
             }
         }
+        // if (!found) {
+        //     std::cerr << jason["tags"][11] << "Tag ID " << det->id << " not found in layout.\n";
+        //     continue;
+        // }
 
         if (tag_ids.size() == 1) {
             object_points.push_back(cv::Point3d(-fid_size / 2.0, fid_size / 2.0, 0.0));
             object_points.push_back(cv::Point3d(fid_size / 2.0, fid_size / 2.0, 0.0));
             object_points.push_back(cv::Point3d(fid_size / 2.0, -fid_size / 2.0, 0.0));
             object_points.push_back(cv::Point3d(-fid_size / 2.0, -fid_size / 2.0, 0.0));
+
+            printf("object_points: %f", object_points[0].x);
+            printf("object_points: %f", object_points[0].y);
+            printf("object_points: %f", object_points[0].z);
+            printf("frame_points: %f", frame_points[0].x);
+            printf("frame_points: %f", frame_points[0].y);
+            printf("corner %f", corner_0.Translation().X().to<double>());
 
             try {
                 cv::solvePnPGeneric(
@@ -141,7 +150,7 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
                 );
             }
             catch (const cv::Exception& e) {
-                std::cerr << "OpenCV Exception: " << e.what() << std::endl;
+                std::cerr << tag_ids.size() << "OpenCV Exception: " << e.what() << std::endl;
             }
 
             frc::Pose3d field_to_tag_pose = tag_poses[0];
@@ -203,8 +212,9 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
                 };
             }
             catch (const cv::Exception& e) {
-                std::cerr << "OpenCV Exception: " << e.what() << std::endl;
+                std::cerr << "OpenCV Exception2: " << e.what() << std::endl;
             }
         }
     }
+    return CameraPoseObject{};
 }
