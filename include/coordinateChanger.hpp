@@ -1,13 +1,15 @@
 #pragma once
-#include <cmath>
-#include <vector>
-
 #include <opencv2/opencv.hpp>
-
 #include "frc/geometry/Pose3d.h"
 #include "frc/geometry/Translation3d.h"
 #include "frc/geometry/Rotation3d.h"
-#include "frc/geometry/Quaternion.h"
+#include <optional>
+#include <vector>
 
-frc::Pose3d OpenCVPoseToWPILib(const std::vector<cv::Mat>& tvec, const std::vector<cv::Mat>& rvec);
-std::vector<double> WPILibTranslationToOpenCV(const frc::Translation3d& translation);
+namespace CoordinateConverter {
+    // Convert OpenCV pose (tvec, rvec) to WPILib coordinate system
+    std::optional<frc::Pose3d> OpenCVPoseToWPILib(const cv::Mat& tvec, const cv::Mat& rvec);
+    
+    // Convert WPILib translation to OpenCV coordinate system
+    std::vector<double> WPILibTranslationToOpenCV(const frc::Translation3d& translation);
+}

@@ -2,41 +2,54 @@
 #include <apriltag/apriltag.h>
 #include <opencv2/opencv.hpp>
 #include "frc/geometry/Pose3d.h"
-#include <vector>
-#include "dataTypes.hpp"
 #include <nlohmann/json.hpp>
+#include <string>
+#include <unordered_map>
+#include "dataTypes.hpp"
+
+class FieldLayout {
+public:
+    explicit FieldLayout(const std::string& jsonPath);
+    
+    std::optional<frc::Pose3d> GetTagPose(int tagId) const;
+    bool HasTag(int tagId) const;
+
+private:
+    void LoadFromJson(const std::string& jsonPath);
+    
+    std::unordered_map<int, frc::Pose3d> tagPoses;
+    nlohmann::json jsonData;
+};
 
 class CameraPoseEstimator {
 public:
-    CameraPoseEstimator();
-    virtual ~CameraPoseEstimator();
+    explicit CameraPoseEstimator(const CameraConfig& config = CameraConfig::Default());
+    virtual ~CameraPoseEstimator() = default;
 
     virtual CameraPoseObject SolveCameraPose(zarray_t* detections);
+    
+    void SetCameraConfig(const CameraConfig& config);
+    void SetFieldLayout(std::shared_ptr<FieldLayout> layout);
 
 protected:
-    nlohmann::json jason;
-    bool found = true;
-    float fid_size;
-    std::vector<cv::Point3d> object_points;
-    std::vector<cv::Point2d> frame_points;
-    std::vector<int> tag_ids;
-    std::vector<frc::Pose3d> tag_poses;
-
-    frc::Pose3d corner_0;
-
-    cv::Mat cameraMatrix = (cv::Mat_<double>(3,3) <<
-        600, 0, 320,
-        0, 600, 240,
-        0, 0, 1
-    );
-
-    cv::Mat distCoeffs = cv::Mat::zeros(5, 1, CV_64F);
-    std::vector<cv::Mat> rvecs;
-    std::vector<cv::Mat> tvecs;
-    std::vector<double> reprojErrors;
+    CameraConfig config;
+    std::shared_ptr<FieldLayout> fieldLayout;
 };
 
-class MultiTagCameraPoseEstimator: public CameraPoseEstimator {
+class MultiTagCameraPoseEstimator : public CameraPoseEstimator {
 public:
+    explicit MultiTagCameraPoseEstimator(
+        const CameraConfig& config = CameraConfig::Default(),
+        std::shared_ptr<FieldLayout> layout = nullptr
+    );
+    
     CameraPoseObject SolveCameraPose(zarray_t* detections) override;
+
+private:
+    CameraPoseObject SolveSingleTag(apriltag_detection_t* det, const frc::Pose3d& tagPose);
+    CameraPoseObject SolveMultiTag(
+        const std::vector<cv::Point3d>& objectPoints,
+        const std::vector<cv::Point2d>& framePoints,
+        const std::vector<int>& tagIds
+    );
 };

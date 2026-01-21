@@ -11,7 +11,24 @@ find_package( Eigen3 REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 include_directories( ${CMAKE_SOURCE_DIR}/include )
 include_directories( ${CMAKE_SOURCE_DIR}/src/config )
-add_executable( YAAD src/main.cpp src/pipeline/capture.cpp src/pipeline/fiducialDetector.cpp src/pipeline/cameraPoseEstimator.cpp src/pipeline/coordinateChanger.cpp src/pipeline/poseEstimator.cpp src/pipeline/tagAngleCalculator.cpp )
+add_executable( YAAD 
+    src/main.cpp 
+    src/pipeline/capture.cpp 
+    src/pipeline/fiducialDetector.cpp 
+    src/pipeline/cameraPoseEstimator.cpp 
+    src/pipeline/coordinateChanger.cpp 
+    src/pipeline/poseEstimator.cpp 
+    src/pipeline/tagAngleCalculator.cpp 
+    src/pipeline/multiCameraManager.cpp
+    src/config/configManager.cpp
+    src/util/logger.cpp
+    src/util/webServer.cpp
+    src/util/networkStreamer.cpp
+    src/util/performanceMonitor.cpp
+    src/util/logger.cpp
+    src/filter/cameraFusion.cpp
+    src/filter/kalmanFilter.cpp
+)
 target_link_libraries( YAAD PRIVATE ${OpenCV_LIBS} )
 target_link_libraries( YAAD PRIVATE apriltag )
 target_link_libraries( YAAD PRIVATE cameraserver ntcore cscore wpiutil wpimath wpilibc hal )

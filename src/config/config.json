@@ -1,0 +1,61 @@
+{
+  "camera": {
+    "index": 0,
+    "width": 640,
+    "height": 480,
+    "fps": 60
+  },
+  "paths": {
+    "field_layout": "/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json",
+    "camera_calibration": "/Users/sim/Projects/aprilTagDetector/src/config/calibration.json",
+    "log_file": "/Users/sim/Projects/aprilTagDetector/src/util/apriltag.log"
+  },
+  "detection": {
+    "quad_decimate": 1.0,
+    "quad_sigma": 0.0,
+    "num_threads": 4,
+    "refine_edges": true
+  },
+  "tag": {
+    "size": 0.162
+  },
+  "display": {
+    "visualization": false,
+    "fps": true,
+    "verbose": false
+  },
+  "performance": {
+    "enabled": true,
+    "report_interval": 100
+  },
+  "fusion": {
+    "max_measurement_age": 0.5,
+    "min_cameras_required": 1,
+    "process_noise": 0.01
+  },
+  "network": {
+    "enabled": true,
+    "protocol": "UDP",
+    "address": "127.0.0.1",
+    "port": 5800,
+    "max_queue_size": 100
+  },
+  "web_server": {
+    "enabled": true,
+    "port": 8080
+  },
+  "cameras": [
+    {
+      "name": "front_camera",
+      "index": 1,
+      "mount_pose": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.5,
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 0.0
+      }
+    }
+  ]
+}

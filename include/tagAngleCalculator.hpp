@@ -1,33 +1,24 @@
 #pragma once
 #include "dataTypes.hpp"
+#include "poseEstimator.hpp"
 #include <Eigen/Dense>
-#include <poseEstimator.hpp>
 
 class TagAngleCalculator {
 public:
-    TagAngleCalculator();
-    virtual ~TagAngleCalculator();
+    explicit TagAngleCalculator(const CameraConfig& config = CameraConfig::Default());
+    virtual ~TagAngleCalculator() = default;
 
     virtual TagAngleObject CalculateTagAngle(zarray_t* detections);
+    
+    void SetCameraConfig(const CameraConfig& config);
+
 protected:
-    Eigen::Matrix3d cameraMatrix = (Eigen::Matrix3d() <<
-        600, 0,   320,
-        0,   600, 240,
-        0,   0,   1
-    ).finished();
-
+    CameraConfig config;
     SquareTargetPoseEstimator poseEstimator;
-
-    cv::Mat cameraMat = (cv::Mat_<double>(3,3) << 600, 0, 320, 0, 600, 240, 0, 0, 1 );
-
-    cv::Mat distCoeffs = cv::Mat::zeros(5, 1, CV_64F);
-
-    std::vector<cv::Point2f> imagePoints;
-    std::vector<cv::Point2f> distortedPoints;
-    Eigen::Matrix<double, 4, 2> corners;
 };
 
 class CameraMatrixTagAngleCalculator : public TagAngleCalculator {
 public:
+    explicit CameraMatrixTagAngleCalculator(const CameraConfig& config = CameraConfig::Default());
     TagAngleObject CalculateTagAngle(zarray_t* detections) override;
 };

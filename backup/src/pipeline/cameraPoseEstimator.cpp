@@ -1,0 +1,227 @@
+#include "cameraPoseEstimator.hpp"
+#include "frc/geometry/Pose3d.h"
+#include "frc/geometry/Translation3d.h"
+#include "frc/geometry/Rotation3d.h"
+#include "frc/geometry/Quaternion.h"
+#include <nlohmann/json.hpp>
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include "coordinateChanger.hpp"
+#include "opencv2/opencv.hpp"
+#include "apriltag/apriltag.h"
+using json = nlohmann::json;
+
+// extern "C" {
+// #include "apriltag.h"
+// #include "tag36h11.h"
+// }
+
+CameraPoseEstimator::CameraPoseEstimator() {
+    std::ifstream file("/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json");
+    if (!file.is_open()) {
+        std::cerr << "Failed to open config.json\n";
+        return;
+    }
+
+    file >> CameraPoseEstimator::jason;
+}
+
+CameraPoseEstimator::~CameraPoseEstimator() {}
+CameraPoseObject CameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
+    zarray_destroy(detections);
+    return CameraPoseObject{};
+}
+
+CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
+    // if (field_layout == nullptr) return nothing
+
+    if (detections == nullptr || zarray_size(detections) == 0) {
+        zarray_destroy(detections);
+        return CameraPoseObject{};
+    }
+
+    fid_size = 0.162f;
+
+    for (int i = 0; i < zarray_size(detections); i++) {
+        frc::Pose3d tag_pose;
+        apriltag_detection_t* det;
+        zarray_get(detections, i, &det);
+
+        for (int j = 0; j < jason["tags"].size(); j++) {
+            if (int(jason["tags"][j]["ID"]) == int(det->id)) {
+                tag_pose = frc::Pose3d(
+                    frc::Translation3d(units::meter_t(jason["tags"][j]["pose"]["translation"]["x"]), 
+                                       units::meter_t(jason["tags"][j]["pose"]["translation"]["y"]), 
+                                       units::meter_t(jason["tags"][j]["pose"]["translation"]["z"])),
+                    frc::Rotation3d(
+                        frc::Quaternion(
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["W"], 
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["X"], 
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["Y"], 
+                            jason["tags"][j]["pose"]["rotation"]["quaternion"]["Z"]
+                        )
+                    )
+                );
+                frc::Pose3d corner_0 = tag_pose + frc::Transform3d(
+                    frc::Translation3d(units::meter_t(fid_size / 2), units::meter_t(-fid_size / 2), 0_m),
+                    frc::Rotation3d()
+                );
+                frc::Pose3d corner_1 = tag_pose + frc::Transform3d(
+                    frc::Translation3d(units::meter_t(-fid_size / 2), units::meter_t(-fid_size / 2), 0_m),
+                    frc::Rotation3d()
+                );
+                frc::Pose3d corner_2 = tag_pose + frc::Transform3d(
+                    frc::Translation3d(units::meter_t(-fid_size / 2), units::meter_t(fid_size / 2), 0_m),
+                    frc::Rotation3d()
+                );
+                frc::Pose3d corner_3 = tag_pose + frc::Transform3d(
+                    frc::Translation3d(units::meter_t(fid_size / 2), units::meter_t(fid_size / 2), 0_m),
+                    frc::Rotation3d()
+                );
+                object_points.push_back(
+                    cv::Point3d(
+                        WPILibTranslationToOpenCV(corner_0.Translation())[0],
+                        WPILibTranslationToOpenCV(corner_0.Translation())[1],
+                        WPILibTranslationToOpenCV(corner_0.Translation())[2]
+                    )
+                );
+                object_points.push_back(
+                    cv::Point3d(
+                        WPILibTranslationToOpenCV(corner_1.Translation())[0],
+                        WPILibTranslationToOpenCV(corner_1.Translation())[1],
+                        WPILibTranslationToOpenCV(corner_1.Translation())[2]
+                    )
+                );
+                object_points.push_back(
+                    cv::Point3d(
+                        WPILibTranslationToOpenCV(corner_2.Translation())[0],
+                        WPILibTranslationToOpenCV(corner_2.Translation())[1],
+                        WPILibTranslationToOpenCV(corner_2.Translation())[2]
+                    )
+                );
+                object_points.push_back(
+                    cv::Point3d(
+                        WPILibTranslationToOpenCV(corner_3.Translation())[0],
+                        WPILibTranslationToOpenCV(corner_3.Translation())[1],
+                        WPILibTranslationToOpenCV(corner_3.Translation())[2]
+                    )
+                );
+
+                frame_points.push_back(cv::Point2d(det->p[0][0], det->p[0][1]));
+                frame_points.push_back(cv::Point2d(det->p[1][0], det->p[1][1]));
+                frame_points.push_back(cv::Point2d(det->p[2][0], det->p[2][1]));
+                frame_points.push_back(cv::Point2d(det->p[3][0], det->p[3][1]));
+
+                tag_ids.push_back(int(det->id));
+                tag_poses.push_back(tag_pose);
+
+            }
+        }
+        // if (!found) {
+        //     std::cerr << jason["tags"][11] << "Tag ID " << det->id << " not found in layout.\n";
+        //     continue;
+        // }
+
+        if (tag_ids.size() == 1) {
+            object_points.push_back(cv::Point3d(-fid_size / 2.0, fid_size / 2.0, 0.0));
+            object_points.push_back(cv::Point3d(fid_size / 2.0, fid_size / 2.0, 0.0));
+            object_points.push_back(cv::Point3d(fid_size / 2.0, -fid_size / 2.0, 0.0));
+            object_points.push_back(cv::Point3d(-fid_size / 2.0, -fid_size / 2.0, 0.0));
+
+            printf("object_points: %f", object_points[0].x);
+            printf("object_points: %f", object_points[0].y);
+            printf("object_points: %f", object_points[0].z);
+            printf("frame_points: %f", frame_points[0].x);
+            printf("frame_points: %f", frame_points[0].y);
+            printf("corner %f", corner_0.Translation().X().to<double>());
+
+            try {
+                cv::solvePnPGeneric(
+                    object_points,
+                    frame_points,
+                    cameraMatrix,
+                    distCoeffs,
+                    rvecs,
+                    tvecs,
+                    false,
+                    cv::SOLVEPNP_IPPE_SQUARE,
+                    cv::noArray(),
+                    cv::noArray(),
+                    reprojErrors
+                );
+            }
+            catch (const cv::Exception& e) {
+                zarray_destroy(detections);
+                std::cerr << tag_ids.size() << "OpenCV Exception: " << e.what() << std::endl;
+            }
+
+            frc::Pose3d field_to_tag_pose = tag_poses[0];
+            frc::Pose3d camera_to_tag_pose_0 = OpenCVPoseToWPILib(tvecs[0], rvecs[0]);
+            frc::Pose3d camera_to_tag_pose_1 = OpenCVPoseToWPILib(tvecs[1], rvecs[1]);
+            frc::Transform3d camera_to_tag_0 = {camera_to_tag_pose_0.Translation(), camera_to_tag_pose_0.Rotation()};
+            frc::Transform3d camera_to_tag_1 = {camera_to_tag_pose_1.Translation(), camera_to_tag_pose_1.Rotation()};
+            frc::Pose3d field_to_camera_0 = field_to_tag_pose.TransformBy(
+                camera_to_tag_0.Inverse()
+            );
+            frc::Pose3d field_to_field_1 = field_to_tag_pose.TransformBy(
+                camera_to_tag_1.Inverse()
+            );
+            frc::Pose3d field_to_camera_pose_0 = {
+                field_to_camera_0.Translation(),
+                field_to_camera_0.Rotation()
+            };
+            frc::Pose3d field_to_camera_pose_1 = {
+                field_to_field_1.Translation(),
+                field_to_field_1.Rotation()
+            };
+
+            return CameraPoseObject{
+                .tag_ids = tag_ids,
+                .pose_0 = field_to_camera_pose_0,
+                .error_0 = reprojErrors[0],
+                .pose_1 = field_to_camera_pose_1,
+                .error_1 = reprojErrors[1]
+            };
+            zarray_destroy(detections);
+        }
+        else {
+            try {
+                cv::solvePnPGeneric(
+                    object_points,
+                    frame_points,
+                    cameraMatrix,
+                    distCoeffs,
+                    rvecs,
+                    tvecs,
+                    false,
+                    cv::SOLVEPNP_SQPNP,
+                    cv::noArray(),
+                    cv::noArray(),
+                    reprojErrors
+                );
+
+                frc::Pose3d camera_to_field_pose = OpenCVPoseToWPILib(tvecs[0], rvecs[0]);
+                frc::Transform3d camera_to_field = {camera_to_field_pose.Translation(), camera_to_field_pose.Rotation()};
+                frc::Transform3d field_to_camera = camera_to_field.Inverse();
+                frc::Pose3d field_to_camera_pose = {
+                    field_to_camera.Translation(),
+                    field_to_camera.Rotation()
+                };
+
+                return CameraPoseObject{
+                    .tag_ids = tag_ids,
+                    .pose_0 = field_to_camera_pose,
+                    .error_0 = reprojErrors[0]
+                };
+                zarray_destroy(detections);
+            }
+            catch (const cv::Exception& e) {
+                zarray_destroy(detections);
+                std::cerr << "OpenCV Exception2: " << e.what() << std::endl;
+            }
+        }
+    }
+    zarray_destroy(detections);
+    return CameraPoseObject{};
+}
