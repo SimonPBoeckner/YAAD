@@ -13,7 +13,7 @@ public:
     FiducialDetector();
     virtual ~FiducialDetector();
 
-    virtual zarray_t* DetectFiducials(cv::Mat& frame);
+    virtual zarray_t *DetectFiducials(cv::Mat& frame);
 
     protected:
     apriltag_family_t *tf;

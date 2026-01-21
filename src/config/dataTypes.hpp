@@ -17,3 +17,17 @@ struct CameraPoseObject {
     Opt<frc::Pose3d> pose_1;  // optional
     Opt<double> error_1;      // optional
 };
+
+struct TagAngleObject {
+    int tag_id;
+    Eigen::Matrix<double, 4, 2> corners;
+    float distance;
+};
+
+struct FiducialPoseObject {
+    int tag_id;
+    frc::Pose3d pose0;
+    double error0;
+    frc::Pose3d pose1;
+    double error1;
+};

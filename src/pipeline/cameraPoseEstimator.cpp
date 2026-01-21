@@ -29,6 +29,7 @@ CameraPoseEstimator::CameraPoseEstimator() {
 
 CameraPoseEstimator::~CameraPoseEstimator() {}
 CameraPoseObject CameraPoseEstimator::SolveCameraPose(zarray_t* detections) {
+    zarray_destroy(detections);
     return CameraPoseObject{};
 }
 
@@ -36,6 +37,7 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
     // if (field_layout == nullptr) return nothing
 
     if (detections == nullptr || zarray_size(detections) == 0) {
+        zarray_destroy(detections);
         return CameraPoseObject{};
     }
 
@@ -150,6 +152,7 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
                 );
             }
             catch (const cv::Exception& e) {
+                zarray_destroy(detections);
                 std::cerr << tag_ids.size() << "OpenCV Exception: " << e.what() << std::endl;
             }
 
@@ -180,6 +183,7 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
                 .pose_1 = field_to_camera_pose_1,
                 .error_1 = reprojErrors[1]
             };
+            zarray_destroy(detections);
         }
         else {
             try {
@@ -210,11 +214,14 @@ CameraPoseObject MultiTagCameraPoseEstimator::SolveCameraPose(zarray_t* detectio
                     .pose_0 = field_to_camera_pose,
                     .error_0 = reprojErrors[0]
                 };
+                zarray_destroy(detections);
             }
             catch (const cv::Exception& e) {
+                zarray_destroy(detections);
                 std::cerr << "OpenCV Exception2: " << e.what() << std::endl;
             }
         }
     }
+    zarray_destroy(detections);
     return CameraPoseObject{};
 }

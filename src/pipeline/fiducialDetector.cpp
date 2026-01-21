@@ -40,6 +40,6 @@ zarray_t* FiducialDetector::DetectFiducials(cv::Mat& frame) {
                       .buf = gray.data
                     };
 
-    zarray_t *detections = apriltag_detector_detect(td, &im);
+    zarray_t* detections = apriltag_detector_detect(td, &im);
     return detections;
 }

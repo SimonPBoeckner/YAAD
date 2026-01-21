@@ -1,7 +1,9 @@
 # ninja log v7
-6	2162	1768226046860329966	CMakeFiles/YAAD.dir/src/main.cpp.o	7e9b52383d47a40
-1	1206	1768187314303455824	CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o	d9b18db522325bf3
-1	1207	1768187314303618866	CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o	bf2fe9431a2a7cf8
-6	1966	1768187686050292118	CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o	921877853709b3ac
-6	2316	1768226752808304258	CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o	6e57ec89526dca5b
-2316	2429	1768226755118066534	YAAD	6fa2426ce9165174
+6	2695	1768887762633448185	CMakeFiles/YAAD.dir/src/main.cpp.o	3cab9fa7a5aea052
+6	1900	1768884986253907307	CMakeFiles/YAAD.dir/src/pipeline/capture.cpp.o	c718f573a34fe615
+7	1354	1768887762633727769	CMakeFiles/YAAD.dir/src/pipeline/fiducialDetector.cpp.o	ccc5c7d463070952
+7	2509	1768887762634063895	CMakeFiles/YAAD.dir/src/pipeline/coordinateChanger.cpp.o	4c972aeec9c5611
+7	2967	1768887762633903269	CMakeFiles/YAAD.dir/src/pipeline/cameraPoseEstimator.cpp.o	274cd7cd7f24f42c
+2967	3074	1768887765593724505	YAAD	fa177a70849253ec
+7	2402	1768887762634278937	CMakeFiles/YAAD.dir/src/pipeline/poseEstimator.cpp.o	5b19df3dedded833
+7	2563	1768887762634448312	CMakeFiles/YAAD.dir/src/pipeline/tagAngleCalculator.cpp.o	b4c9dc8836d18fd5

@@ -7859,3 +7859,166 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:10 (find_package)"
+    name: "Eigen3"
+    configs:
+      -
+        filename: "Eigen3Config.cmake"
+        kind: "cmake"
+      -
+        filename: "eigen3-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Eigen3"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/pkgRedirects/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/sim/Projects/aprilTagDetector/build/CMakeFiles/pkgRedirects/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/CMake.app/Contents/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/CMake.app/Contents/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.14/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.14/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/VMware Fusion.app/Contents/Public/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/VMware Fusion.app/Contents/Public/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/share/eigen3/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/share/eigen3/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/share/eigen3/cmake/Eigen3Config.cmake"
+      mode: "config"
+      version: "5.0.1"
+    search_context:
+      ENV{PATH}:
+        - "/Applications/CMake.app/Contents/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.14/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Applications/VMware Fusion.app/Contents/Public"
+        - "/opt/homebrew/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/Applications/CMake.app/Contents"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+...

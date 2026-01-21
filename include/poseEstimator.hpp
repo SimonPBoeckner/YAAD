@@ -1,5 +1,6 @@
 #pragma once
 #include <opencv2/opencv.hpp>
+#include <poseEstimator.hpp>
 #include "dataTypes.hpp"
 
 class PoseEstimator {
@@ -7,7 +8,7 @@ public:
     PoseEstimator();
     virtual ~PoseEstimator();
 
-    virtual CameraPoseObject SolveFiducialPose(zarray_t* detections);
+    virtual FiducialPoseObject SolveFiducialPose(zarray_t* detections);
 
 protected:
     float fid_size;
@@ -29,5 +30,5 @@ protected:
 
 class SquareTargetPoseEstimator: public PoseEstimator {
 public:
-    CameraPoseObject SolveFiducialPose(zarray_t* detections) override;
+    FiducialPoseObject SolveFiducialPose(zarray_t* detections) override;
 };

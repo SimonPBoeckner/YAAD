@@ -4,11 +4,11 @@
 PoseEstimator::PoseEstimator() {}
 PoseEstimator::~PoseEstimator() {}
 
-CameraPoseObject PoseEstimator::SolveFiducialPose(zarray_t* detections) {
-    return CameraPoseObject{};
+FiducialPoseObject PoseEstimator::SolveFiducialPose(zarray_t* detections) {
+    return FiducialPoseObject{};
 }
 
-CameraPoseObject SquareTargetPoseEstimator::SolveFiducialPose(zarray_t* detections) {
+FiducialPoseObject SquareTargetPoseEstimator::SolveFiducialPose(zarray_t* detections) {
     fid_size = 0.162f;
     apriltag_detection_t* det;
     zarray_get(detections, 0, &det);
@@ -44,15 +44,16 @@ CameraPoseObject SquareTargetPoseEstimator::SolveFiducialPose(zarray_t* detectio
     }
 
     try {
-        return CameraPoseObject{
-            .tag_ids = {int(det->id)},
-            .pose_0 = OpenCVPoseToWPILib(tvecs[0], rvecs[0]),
-            .error_0 = reprojErrors[0],
-            .pose_1 = OpenCVPoseToWPILib(tvecs[1], rvecs[1]),
-            .error_1 = reprojErrors[1]
+        return FiducialPoseObject{
+            .tag_id = int(det->id),
+            .pose0 = OpenCVPoseToWPILib(tvecs[0], rvecs[0]),
+            .error0 = reprojErrors[0],
+            .pose1 = OpenCVPoseToWPILib(tvecs[1], rvecs[1]),
+            .error1 = reprojErrors[1]
         };
     }
     catch (const cv::Exception& e) {
         std::cerr << "OpenCV Exception: " << e.what() << std::endl;
     }
+    return FiducialPoseObject{};
 }
