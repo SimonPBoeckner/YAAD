@@ -3,7 +3,7 @@
     "index": 0,
     "width": 640,
     "height": 480,
-    "fps": 60
+    "fps": 120
   },
   "paths": {
     "field_layout": "/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json",
@@ -20,7 +20,7 @@
     "size": 0.162
   },
   "display": {
-    "visualization": false,
+    "visualization": true,
     "fps": true,
     "verbose": false
   },
@@ -43,6 +43,13 @@
   "web_server": {
     "enabled": true,
     "port": 8080
+  },
+  "networktables": {
+    "enabled": false,
+    "team_number": "4069",
+    "server_address": "",
+    "is_server": true,
+    "table_name": "Vision"
   },
   "cameras": [
     {

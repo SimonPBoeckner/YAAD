@@ -6,6 +6,7 @@
 #include "multiCameraManager.hpp"
 #include "cameraFusion.hpp"
 #include "networkStreamer.hpp"
+#include "networkTablesPublisher.hpp"
 #include "webServer.hpp"
 #include "mjpegStreamer.hpp"
 #include "configManager.hpp"
@@ -24,7 +25,7 @@ int main(int argc, char** argv) {
     
     try {
         // Load configuration
-        std::string configPath = "/Users/sim/Projects/aprilTagDetector/src/config/config.json";
+        std::string configPath = (argc > 1) ? argv[1] : "config_advanced.json";
         auto configOpt = ConfigManager::LoadFromFile(configPath);
         AppConfig config = configOpt.value_or(ConfigManager::CreateDefault());
         
@@ -88,6 +89,25 @@ int main(int argc, char** argv) {
             LOG_INFO("Network streamer started on UDP port 5800");
         }
         
+        // Initialize NetworkTables publisher for FRC
+        NetworkTablesConfig ntConfig;
+        ntConfig.enabled = config.networkTablesEnabled;
+        ntConfig.teamNumber = config.teamNumber;
+        ntConfig.serverAddress = config.ntServerAddress;
+        ntConfig.isServer = config.ntIsServer;
+        ntConfig.tableName = config.ntTableName;
+        
+        NetworkTablesPublisher ntPublisher(ntConfig);
+        if (ntPublisher.Start()) {
+            if (config.ntIsServer) {
+                LOG_INFO("NetworkTables server started on port 5810");
+            } else if (!config.teamNumber.empty() && config.teamNumber != "0") {
+                LOG_INFO("NetworkTables client connecting to team " + config.teamNumber);
+            } else if (!config.ntServerAddress.empty()) {
+                LOG_INFO("NetworkTables client connecting to " + config.ntServerAddress);
+            }
+        }
+        
         // Initialize MJPEG stream manager
         MJPEGStreamManager mjpegManager;
         mjpegManager.AddStream("front_camera", 8081);
@@ -131,6 +151,9 @@ int main(int argc, char** argv) {
         
         LOG_INFO("System running. Press Ctrl+C to exit.");
         LOG_INFO("Web interface: http://localhost:8080");
+        if (ntPublisher.IsRunning()) {
+            LOG_INFO("NetworkTables publishing to table: " + config.ntTableName);
+        }
         
         // Main processing loop
         while (running) {
@@ -175,14 +198,21 @@ int main(int argc, char** argv) {
                 networkStreamer.SendMultipleCameras(cameraResults);
             }
             
+            // Publish to NetworkTables for FRC
+            if (ntPublisher.IsRunning()) {
+                ntPublisher.PublishAll(fusedResult, cameraResults);
+            }
+            
             // Log results periodically
             if (frameCount % 30 == 0 && fusedResult.confidence > 0.5) {
+                std::string ntStatus = ntPublisher.IsConnected() ? "Connected" : "Disconnected";
                 LOG_INFO("Fused pose: [" +
                     std::to_string(fusedResult.pose.Translation().X().value()) + ", " +
                     std::to_string(fusedResult.pose.Translation().Y().value()) + ", " +
                     std::to_string(fusedResult.pose.Translation().Z().value()) + "] " +
                     "Confidence: " + std::to_string(fusedResult.confidence) +
-                    " Cameras: " + std::to_string(fusedResult.numCamerasUsed)
+                    " Cameras: " + std::to_string(fusedResult.numCamerasUsed) +
+                    " NT: " + ntStatus
                 );
             }
             
@@ -203,6 +233,7 @@ int main(int argc, char** argv) {
         
         // Cleanup
         LOG_INFO("Shutting down...");
+        ntPublisher.Stop();
         cameraManager.StopAll();
         mjpegManager.StopAll();
         networkStreamer.Stop();

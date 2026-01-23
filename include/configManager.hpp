@@ -10,9 +10,9 @@ struct AppConfig {
     int cameraFPS = 60;
     
     // Paths
-    std::string fieldLayoutPath = "/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json";
-    std::string cameraCalibrationPath = "/Users/sim/Projects/aprilTagDetector/src/config/calibration.json";
-    std::string logFilePath = "/Users/sim/Projects/aprilTagDetector/src/util/apriltag.log";
+    std::string fieldLayoutPath = "";
+    std::string cameraCalibrationPath = "";
+    std::string logFilePath = "apriltag.log";
     
     // Detection settings
     float quadDecimate = 1.0f;
@@ -31,6 +31,13 @@ struct AppConfig {
     // Performance settings
     bool enablePerformanceMonitoring = false;
     int performanceReportInterval = 100; // frames
+    
+    // NetworkTables settings (FRC)
+    bool networkTablesEnabled = true;
+    std::string teamNumber = "0";
+    std::string ntServerAddress = "";
+    bool ntIsServer = false;
+    std::string ntTableName = "Vision";
 };
 
 class ConfigManager {

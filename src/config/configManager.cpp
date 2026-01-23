@@ -61,6 +61,15 @@ std::optional<AppConfig> ConfigManager::LoadFromFile(const std::string& filepath
         config.performanceReportInterval = j["performance"].value("report_interval", 100);
     }
     
+    // NetworkTables settings
+    if (j.contains("networktables")) {
+        config.networkTablesEnabled = j["networktables"].value("enabled", true);
+        config.teamNumber = j["networktables"].value("team_number", "0");
+        config.ntServerAddress = j["networktables"].value("server_address", "");
+        config.ntIsServer = j["networktables"].value("is_server", false);
+        config.ntTableName = j["networktables"].value("table_name", "Vision");
+    }
+    
     return config;
 }
 
@@ -89,6 +98,12 @@ bool ConfigManager::SaveToFile(const std::string& filepath, const AppConfig& con
     
     j["performance"]["enabled"] = config.enablePerformanceMonitoring;
     j["performance"]["report_interval"] = config.performanceReportInterval;
+    
+    j["networktables"]["enabled"] = config.networkTablesEnabled;
+    j["networktables"]["team_number"] = config.teamNumber;
+    j["networktables"]["server_address"] = config.ntServerAddress;
+    j["networktables"]["is_server"] = config.ntIsServer;
+    j["networktables"]["table_name"] = config.ntTableName;
     
     std::ofstream file(filepath);
     if (!file.is_open()) {

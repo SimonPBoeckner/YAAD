@@ -33,6 +33,7 @@ add_executable( YAAD
     src/filter/kalmanFilter.cpp
     src/util/mjpegStreamer.cpp
     src/util/visualizationUtils.cpp
+    src/util/networkTablesPublisher.cpp
 )
 target_link_libraries( YAAD PRIVATE ${OpenCV_LIBS} )
 target_link_libraries( YAAD PRIVATE apriltag )

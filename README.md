@@ -9,6 +9,7 @@ A production-ready, multi-camera AprilTag detection system with real-time pose e
 - ✅ **Sensor Fusion**: Weighted fusion of multiple camera measurements
 - ✅ **Live Video Streaming**: MJPEG streams for each camera
 - ✅ **Network Streaming**: UDP/TCP transmission of detection data
+- ✅ **NetworkTables Integration**: Native FRC support for robot code
 - ✅ **Web Interface**: Real-time dashboard with live feeds at `http://localhost:8080`
 - ✅ **Performance Monitoring**: Built-in FPS tracking and performance metrics
 - ✅ **Configurable**: JSON-based configuration system
@@ -36,6 +37,12 @@ A production-ready, multi-camera AprilTag detection system with real-time pose e
               │  Streams   │           │   Streaming    │   │  Interface  │
               └────────────┘           └────────────────┘   └─────────────┘
                 Port 8081+                  Port 5800          Port 8080
+                                                │
+                                         ┌──────▼──────┐
+                                         │ NetworkTables│
+                                         │  (FRC Robot) │
+                                         └──────────────┘
+                                            Port 5810
 ```
 
 ## Installation
@@ -50,8 +57,14 @@ sudo apt-get install \
     nlohmann-json3-dev \
     apriltag-dev
 
+# For FRC NetworkTables support
+# Download from: https://github.com/wpilibsuite/allwpilib/releases
+# Install ntcore library
+
 # macOS
 brew install opencv eigen nlohmann-json apriltag
+
+# NetworkTables from WPILib installer
 ```
 
 ### Compilation
@@ -78,7 +91,7 @@ g++ -std=c++17 \
     configManager.cpp \
     -o vision_system \
     -lopencv_core -lopencv_imgproc -lopencv_calib3d -lopencv_imgcodecs \
-    -lapriltag -lpthread
+    -lapriltag -lntcore -lwpiutil -lpthread
 ```
 
 Or use CMake:
@@ -141,6 +154,13 @@ Create `config_advanced.json`:
     "protocol": "UDP",
     "address": "127.0.0.1",
     "port": 5800
+  },
+  "networktables": {
+    "enabled": true,
+    "team_number": "254",
+    "server_address": "",
+    "is_server": false,
+    "table_name": "Vision"
   }
 }
 ```
