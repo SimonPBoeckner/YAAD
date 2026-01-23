@@ -4,6 +4,7 @@
 #include <atomic>
 #include <memory>
 #include <functional>
+#include <vector>
 #include "cameraFusion.hpp"
 #include "multiCameraManager.hpp"
 
@@ -20,6 +21,7 @@ public:
     // Set callbacks to get current data
     void SetFusedPoseCallback(std::function<FusedPoseResult()> callback);
     void SetCameraResultsCallback(std::function<std::vector<CameraDetectionResult>()> callback);
+    void SetStreamInfoCallback(std::function<std::vector<std::pair<std::string, int>>()> callback);
 
 private:
     int port;
@@ -28,6 +30,7 @@ private:
     
     std::function<FusedPoseResult()> fusedPoseCallback;
     std::function<std::vector<CameraDetectionResult>()> cameraResultsCallback;
+    std::function<std::vector<std::pair<std::string, int>>()> streamInfoCallback;
     
     void ServerLoop();
     std::string HandleRequest(const std::string& request);
@@ -37,6 +40,7 @@ private:
     std::string HandleAPIStatus();
     std::string HandleAPIFusedPose();
     std::string HandleAPICameras();
+    std::string HandleAPIStreams();
     
     // HTML page generation
     std::string GenerateIndexPage();

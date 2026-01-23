@@ -1,4 +1,5 @@
 #include "multiCameraManager.hpp"
+#include "visualizationUtils.hpp"
 #include "logger.hpp"
 
 // CameraStream Implementation
@@ -58,6 +59,8 @@ std::optional<CameraDetectionResult> CameraStream::GetLatestResult() {
 }
 
 void CameraStream::ProcessingLoop() {
+    FPSCounter fpsCounter;
+    
     while (running) {
         auto frameOpt = capture->GetFrame();
         if (!frameOpt) {
@@ -72,12 +75,21 @@ void CameraStream::ProcessingLoop() {
         result.cameraName = config.cameraName;
         result.cameraIndex = config.cameraIndex;
         result.timestamp = std::chrono::system_clock::now();
-        result.hasFrame = true;
-        result.frame = frame.clone();
         
         if (detections && zarray_size(detections.get()) > 0) {
             result.poseData = poseEstimator->SolveCameraPose(detections.get());
+            
+            // Draw detections on frame
+            VisualizationUtils::DrawDetections(frame, detections.get());
+            VisualizationUtils::DrawPoseOverlay(frame, result.poseData, config.cameraName);
         }
+        
+        // Draw FPS
+        fpsCounter.Tick();
+        VisualizationUtils::DrawFPS(frame, fpsCounter.GetFPS());
+        
+        result.hasFrame = true;
+        result.frame = frame.clone();
         
         // Update latest result (thread-safe)
         {

@@ -47,7 +47,7 @@
   "cameras": [
     {
       "name": "front_camera",
-      "index": 1,
+      "index": 0,
       "mount_pose": {
         "x": 0.0,
         "y": 0.0,

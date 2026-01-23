@@ -51,8 +51,11 @@ void WebServer::SetFusedPoseCallback(std::function<FusedPoseResult()> callback) 
     fusedPoseCallback = callback;
 }
 
-void WebServer::SetCameraResultsCallback(
-    std::function<std::vector<CameraDetectionResult>()> callback) {
+void WebServer::SetStreamInfoCallback(std::function<std::vector<std::pair<std::string, int>>()> callback) {
+    streamInfoCallback = callback;
+}
+
+void WebServer::SetCameraResultsCallback(std::function<std::vector<CameraDetectionResult>()> callback) {
     cameraResultsCallback = callback;
 }
 
@@ -142,6 +145,8 @@ std::string WebServer::HandleRequest(const std::string& request) {
         return HandleAPIFusedPose();
     } else if (path == "/api/cameras") {
         return HandleAPICameras();
+    } else if (path == "/api/streams") {
+        return HandleAPIStreams();
     }
     
     std::string response = "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\n\r\n404 Not Found";
@@ -192,6 +197,28 @@ std::string WebServer::HandleAPICameras() {
     return response;
 }
 
+std::string WebServer::HandleAPIStreams() {
+    if (streamInfoCallback) {
+        auto streams = streamInfoCallback();
+        nlohmann::json j;
+        j["streams"] = nlohmann::json::array();
+        
+        for (const auto& [name, port] : streams) {
+            nlohmann::json streamInfo;
+            streamInfo["name"] = name;
+            streamInfo["port"] = port;
+            j["streams"].push_back(streamInfo);
+        }
+        
+        std::string body = j.dump();
+        std::string response = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n" + body;
+        return response;
+    }
+    
+    std::string response = "HTTP/1.1 503 Service Unavailable\r\n\r\n";
+    return response;
+}
+
 std::string WebServer::GenerateIndexPage() {
     return R"html(
 <!DOCTYPE html>
@@ -201,7 +228,7 @@ std::string WebServer::GenerateIndexPage() {
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a1a; color: #fff; }
         h1 { color: #4CAF50; }
-        .container { max-width: 1200px; margin: 0 auto; }
+        .container { max-width: 1400px; margin: 0 auto; }
         .card { background: #2a2a2a; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .metric { font-size: 24px; font-weight: bold; color: #4CAF50; }
@@ -213,6 +240,11 @@ std::string WebServer::GenerateIndexPage() {
         .confidence-fill { height: 100%; background: linear-gradient(90deg, #f44336, #ff9800, #4CAF50); }
         #status { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #4CAF50; }
         .position { font-family: monospace; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+        .video-container { position: relative; background: #000; border-radius: 8px; overflow: hidden; }
+        .video-container img { width: 100%; height: auto; display: block; }
+        .video-label { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 4px; font-weight: bold; }
+        .no-video { padding: 100px 20px; text-align: center; color: #666; }
     </style>
 </head>
 <body>
@@ -268,7 +300,14 @@ std::string WebServer::GenerateIndexPage() {
         </div>
         
         <div class="card">
-            <h2>Camera Feeds</h2>
+            <h2>Live Camera Feeds</h2>
+            <div class="video-grid" id="video-feeds">
+                <div class="no-video">Waiting for camera streams...</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Camera Detection Status</h2>
             <div id="cameras"></div>
         </div>
     </div>
@@ -276,6 +315,27 @@ std::string WebServer::GenerateIndexPage() {
     <script>
         let updateCount = 0;
         let lastTime = Date.now();
+        let streamPorts = {};
+        
+        function initializeVideoFeeds() {
+            fetch('/api/streams')
+                .then(r => r.json())
+                .then(data => {
+                    const container = document.getElementById('video-feeds');
+                    if (data.streams && data.streams.length > 0) {
+                        container.innerHTML = data.streams.map(stream => `
+                            <div class="video-container">
+                                <div class="video-label">${stream.name}</div>
+                                <img src="http://localhost:${stream.port}" alt="${stream.name}">
+                            </div>
+                        `).join('');
+                        data.streams.forEach(s => streamPorts[s.name] = s.port);
+                    } else {
+                        container.innerHTML = '<div class="no-video">No camera streams available</div>';
+                    }
+                })
+                .catch(e => console.error('Failed to get stream info', e));
+        }
         
         function updateData() {
             fetch('/api/fused_pose')
@@ -311,7 +371,11 @@ std::string WebServer::GenerateIndexPage() {
                     const container = document.getElementById('cameras');
                     container.innerHTML = data.cameras.map(cam => `
                         <div style="margin: 10px 0; padding: 10px; background: #333; border-radius: 4px;">
-                            <strong>${cam.camera_name}</strong><br>
+                            <strong>${cam.camera_name}</strong> 
+                            ${streamPorts[cam.camera_name] ? 
+                                `<span style="color: #4CAF50;">● Streaming on port ${streamPorts[cam.camera_name]}</span>` : 
+                                '<span style="color: #888;">○ No stream</span>'}
+                            <br>
                             Tags: ${cam.tag_ids ? cam.tag_ids.join(', ') : 'None'}<br>
                             Error: ${cam.error ? cam.error.toFixed(4) : 'N/A'}
                         </div>
@@ -319,6 +383,10 @@ std::string WebServer::GenerateIndexPage() {
                 });
         }
         
+        // Initialize video feeds once
+        initializeVideoFeeds();
+        
+        // Update data periodically
         setInterval(updateData, 100);
         updateData();
     </script>

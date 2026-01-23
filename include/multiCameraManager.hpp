@@ -9,6 +9,7 @@
 #include "capture.hpp"
 #include "fiducialDetector.hpp"
 #include "cameraPoseEstimator.hpp"
+#include "performanceMonitor.hpp"
 #include "dataTypes.hpp"
 
 struct CameraStreamConfig {

@@ -7,6 +7,7 @@
 #include "cameraFusion.hpp"
 #include "networkStreamer.hpp"
 #include "webServer.hpp"
+#include "mjpegStreamer.hpp"
 #include "configManager.hpp"
 #include "logger.hpp"
 #include "performanceMonitor.hpp"
@@ -23,7 +24,7 @@ int main(int argc, char** argv) {
     
     try {
         // Load configuration
-        std::string configPath = (argc > 1) ? argv[1] : "config_advanced.json";
+        std::string configPath = "/Users/sim/Projects/aprilTagDetector/src/config/config.json";
         auto configOpt = ConfigManager::LoadFromFile(configPath);
         AppConfig config = configOpt.value_or(ConfigManager::CreateDefault());
         
@@ -87,6 +88,13 @@ int main(int argc, char** argv) {
             LOG_INFO("Network streamer started on UDP port 5800");
         }
         
+        // Initialize MJPEG stream manager
+        MJPEGStreamManager mjpegManager;
+        mjpegManager.AddStream("front_camera", 8081);
+        // Add more streams as needed for additional cameras
+        mjpegManager.StartAll();
+        LOG_INFO("MJPEG streams started");
+        
         // Initialize web server
         WebServer webServer(8080);
         
@@ -102,6 +110,10 @@ int main(int argc, char** argv) {
         
         webServer.SetCameraResultsCallback([&]() -> std::vector<CameraDetectionResult> {
             return cameraManager.GetAllLatestResults();
+        });
+        
+        webServer.SetStreamInfoCallback([&]() -> std::vector<std::pair<std::string, int>> {
+            return mjpegManager.GetStreamInfo();
         });
         
         if (webServer.Start()) {
@@ -133,6 +145,13 @@ int main(int argc, char** argv) {
                     PERF_TIMER("get_camera_results");
                 }
                 cameraResults = cameraManager.GetAllLatestResults();
+            }
+            
+            // Update MJPEG streams with frames
+            for (const auto& result : cameraResults) {
+                if (result.hasFrame && !result.frame.empty()) {
+                    mjpegManager.UpdateFrame(result.cameraName, result.frame);
+                }
             }
             
             // Fuse detections
@@ -185,6 +204,7 @@ int main(int argc, char** argv) {
         // Cleanup
         LOG_INFO("Shutting down...");
         cameraManager.StopAll();
+        mjpegManager.StopAll();
         networkStreamer.Stop();
         webServer.Stop();
         

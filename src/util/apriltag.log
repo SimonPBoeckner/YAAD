@@ -1,0 +1,103 @@
+[2026-01-23 11:41:13] [INFO] === AprilTag Multi-Camera Vision System ===
+[2026-01-23 11:41:13] [INFO] Starting advanced vision system with fusion and networking...
+[2026-01-23 11:41:13] [INFO] Field layout loaded: /Users/sim/Projects/aprilTagDetector/Layout/2025-official.json
+[2026-01-23 11:41:13] [INFO] Added camera: front_camera
+[2026-01-23 11:41:13] [INFO] Network streamer started on 127.0.0.1:5800
+[2026-01-23 11:41:13] [INFO] Network streamer started on UDP port 5800
+[2026-01-23 11:41:13] [INFO] Added MJPEG stream: front_camera on port 8081
+[2026-01-23 11:41:13] [INFO] MJPEG stream 'front_camera' started on port 8081
+[2026-01-23 11:41:13] [INFO] MJPEG streams started
+[2026-01-23 11:41:13] [INFO] Web server started on port 8080
+[2026-01-23 11:41:13] [INFO] Web interface available at http://localhost:8080
+[2026-01-23 11:41:14] [INFO] Started camera stream: front_camera
+[2026-01-23 11:41:14] [INFO] All cameras started
+[2026-01-23 11:41:14] [INFO] System running. Press Ctrl+C to exit.
+[2026-01-23 11:41:14] [INFO] Web interface: http://localhost:8080
+[2026-01-23 11:41:16] [INFO] FPS: 82.015810
+[2026-01-23 11:41:17] [INFO] FPS: 80.919081
+[2026-01-23 11:41:18] [INFO] FPS: 80.516899
+[2026-01-23 11:41:19] [INFO] FPS: 81.429990
+[2026-01-23 11:41:21] [INFO] FPS: 79.760718
+[2026-01-23 11:41:22] [INFO] FPS: 81.268583
+[2026-01-23 11:41:23] [INFO] FPS: 76.237624
+[2026-01-23 11:41:24] [INFO] FPS: 81.510934
+[2026-01-23 11:41:26] [INFO] FPS: 80.757727
+[2026-01-23 11:41:27] [INFO] FPS: 80.677291
+[2026-01-23 11:41:28] [INFO] FPS: 80.118694
+[2026-01-23 11:41:29] [INFO] FPS: 81.107814
+[2026-01-23 11:41:30] [INFO] Fused pose: [17.787757, -0.040652, 1.803054] Confidence: 1.724730 Cameras: 1
+[2026-01-23 11:41:31] [INFO] FPS: 79.920080
+[2026-01-23 11:41:31] [INFO] Fused pose: [17.374276, -0.370098, 1.387537] Confidence: 2.644717 Cameras: 1
+[2026-01-23 11:41:31] [INFO] Fused pose: [17.575302, -0.312251, 1.516514] Confidence: 3.405413 Cameras: 1
+[2026-01-23 11:41:32] [INFO] Fused pose: [17.577592, -0.248535, 1.586750] Confidence: 3.408163 Cameras: 1
+[2026-01-23 11:41:32] [INFO] FPS: 77.227723
+[2026-01-23 11:41:32] [INFO] Fused pose: [17.557657, -0.292071, 1.618360] Confidence: 3.343668 Cameras: 1
+[2026-01-23 11:41:32] [INFO] Fused pose: [17.628639, -0.309141, 1.519486] Confidence: 3.151552 Cameras: 1
+[2026-01-23 11:41:33] [INFO] Fused pose: [17.762698, -0.219099, 1.579905] Confidence: 3.460244 Cameras: 1
+[2026-01-23 11:41:33] [INFO] FPS: 77.689243
+[2026-01-23 11:41:33] [INFO] Fused pose: [17.659381, -0.413508, 1.669383] Confidence: 5.104844 Cameras: 1
+[2026-01-23 11:41:34] [INFO] Fused pose: [17.616585, -0.470784, 1.779473] Confidence: 8.410173 Cameras: 1
+[2026-01-23 11:41:34] [INFO] Fused pose: [17.579359, -0.369457, 1.981124] Confidence: 6.063574 Cameras: 1
+[2026-01-23 11:41:34] [INFO] Fused pose: [17.402009, -0.446103, 2.025659] Confidence: 6.683410 Cameras: 1
+[2026-01-23 11:41:34] [INFO] FPS: 75.546720
+[2026-01-23 11:41:35] [INFO] Fused pose: [17.415151, -0.417577, 2.033983] Confidence: 7.206661 Cameras: 1
+[2026-01-23 11:41:35] [INFO] Fused pose: [17.368720, -0.633359, 1.370297] Confidence: 5.785639 Cameras: 1
+[2026-01-23 11:41:36] [INFO] Fused pose: [17.390303, -0.614825, 1.199981] Confidence: 5.246941 Cameras: 1
+[2026-01-23 11:41:36] [INFO] FPS: 77.304262
+[2026-01-23 11:41:36] [INFO] Fused pose: [17.657076, -0.438793, 1.116182] Confidence: 4.338177 Cameras: 1
+[2026-01-23 11:41:36] [INFO] Fused pose: [17.414875, -0.576929, 1.291996] Confidence: 2.485874 Cameras: 1
+[2026-01-23 11:41:37] [INFO] Fused pose: [17.355345, -0.555325, 1.328008] Confidence: 2.943823 Cameras: 1
+[2026-01-23 11:41:37] [INFO] FPS: 76.464747
+[2026-01-23 11:41:38] [INFO] FPS: 79.000000
+[2026-01-23 11:41:40] [INFO] FPS: 78.921079
+[2026-01-23 11:41:41] [INFO] FPS: 80.198020
+[2026-01-23 11:41:42] [INFO] FPS: 79.443893
+[2026-01-23 11:41:43] [INFO] FPS: 80.357143
+[2026-01-23 11:41:45] [INFO] FPS: 79.920080
+[2026-01-23 11:41:46] [INFO] FPS: 79.129575
+[2026-01-23 11:41:47] [INFO] FPS: 79.681275
+[2026-01-23 11:41:48] [INFO] FPS: 80.118694
+[2026-01-23 11:41:50] [INFO] FPS: 80.000000
+[2026-01-23 11:41:51] [INFO] FPS: 80.000000
+[2026-01-23 11:41:51] [INFO] Fused pose: [17.562684, 0.033835, 0.998254] Confidence: 2.787810 Cameras: 1
+[2026-01-23 11:41:51] [INFO] Fused pose: [17.133141, -0.293148, 1.155227] Confidence: 2.633858 Cameras: 1
+[2026-01-23 11:41:52] [INFO] Fused pose: [17.190819, -0.248331, 1.224703] Confidence: 2.875323 Cameras: 1
+[2026-01-23 11:41:52] [INFO] FPS: 77.534791
+[2026-01-23 11:41:52] [INFO] Fused pose: [17.213583, -0.241821, 1.250626] Confidence: 2.580306 Cameras: 1
+[2026-01-23 11:41:53] [INFO] Fused pose: [17.232596, -0.231240, 1.288080] Confidence: 2.033225 Cameras: 1
+[2026-01-23 11:41:53] [INFO] Fused pose: [17.297467, -0.144487, 1.726017] Confidence: 2.793914 Cameras: 1
+[2026-01-23 11:41:53] [INFO] Fused pose: [17.247924, -0.118311, 1.883984] Confidence: 3.588041 Cameras: 1
+[2026-01-23 11:41:53] [INFO] FPS: 77.227723
+[2026-01-23 11:41:54] [INFO] Fused pose: [17.308009, -0.142583, 1.759165] Confidence: 1.821695 Cameras: 1
+[2026-01-23 11:41:54] [INFO] Fused pose: [17.219322, -0.236519, 1.224262] Confidence: 3.510412 Cameras: 1
+[2026-01-23 11:41:55] [INFO] Fused pose: [17.055637, -0.345243, 1.308446] Confidence: 5.058967 Cameras: 1
+[2026-01-23 11:41:55] [INFO] FPS: 76.616915
+[2026-01-23 11:41:55] [INFO] Fused pose: [17.254240, -0.212706, 1.252091] Confidence: 1.794558 Cameras: 1
+[2026-01-23 11:41:55] [INFO] Fused pose: [17.464675, -0.043249, 1.324928] Confidence: 1.441743 Cameras: 1
+[2026-01-23 11:41:56] [INFO] Fused pose: [17.544505, 0.134079, 1.646529] Confidence: 1.502147 Cameras: 1
+[2026-01-23 11:41:56] [INFO] FPS: 78.295342
+[2026-01-23 11:41:56] [INFO] Fused pose: [17.429222, -0.008979, 1.606599] Confidence: 1.164174 Cameras: 1
+[2026-01-23 11:41:56] [INFO] Fused pose: [17.411637, -0.033689, 1.622393] Confidence: 1.216467 Cameras: 1
+[2026-01-23 11:41:57] [INFO] Fused pose: [17.362064, -0.065843, 1.501422] Confidence: 0.920389 Cameras: 1
+[2026-01-23 11:41:57] [INFO] Fused pose: [17.396048, -0.064748, 1.367683] Confidence: 1.249885 Cameras: 1
+[2026-01-23 11:41:57] [INFO] FPS: 76.769691
+[2026-01-23 11:41:58] [INFO] Fused pose: [17.395903, -0.069498, 1.351835] Confidence: 1.015117 Cameras: 1
+[2026-01-23 11:41:58] [INFO] Fused pose: [17.395791, -0.025333, 1.572673] Confidence: 0.783098 Cameras: 1
+[2026-01-23 11:41:58] [INFO] Fused pose: [17.396115, 0.031302, 1.671990] Confidence: 1.418565 Cameras: 1
+[2026-01-23 11:41:59] [INFO] FPS: 77.689243
+[2026-01-23 11:42:00] [INFO] FPS: 80.000000
+[2026-01-23 11:42:01] [INFO] FPS: 80.039526
+[2026-01-23 11:42:02] [INFO] FPS: 80.436941
+[2026-01-23 11:42:04] [INFO] FPS: 79.760718
+[2026-01-23 11:42:05] [INFO] FPS: 80.357143
+[2026-01-23 11:42:06] [INFO] FPS: 80.039526
+[2026-01-23 11:42:07] [INFO] FPS: 77.594568
+[2026-01-23 11:42:09] [INFO] FPS: 80.436941
+[2026-01-23 11:42:09] [INFO] Interrupt signal received. Shutting down...
+[2026-01-23 11:42:09] [INFO] Shutting down...
+[2026-01-23 11:42:09] [INFO] Stopped camera stream: front_camera
+[2026-01-23 11:42:09] [INFO] MJPEG stream 'front_camera' stopped
+[2026-01-23 11:42:09] [INFO] Network streamer stopped
+[2026-01-23 11:42:09] [INFO] Web server stopped
+[2026-01-23 11:42:09] [INFO] Final performance statistics:
+[2026-01-23 11:42:09] [INFO] System shutdown complete. Processed 4336 frames.
