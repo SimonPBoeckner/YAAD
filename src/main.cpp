@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
     
     try {
         // Load configuration
-        std::string configPath = (argc > 1) ? argv[1] : "config_advanced.json";
+        std::string configPath = (argc > 1) ? argv[1] : "config.json";
         auto configOpt = ConfigManager::LoadFromFile(configPath);
         AppConfig config = configOpt.value_or(ConfigManager::CreateDefault());
         

@@ -224,7 +224,7 @@ std::string WebServer::GenerateIndexPage() {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AprilTag Vision System</title>
+    <title>Yet Another AprilTag Detector</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a1a; color: #fff; }
         h1 { color: #4CAF50; }
@@ -249,7 +249,7 @@ std::string WebServer::GenerateIndexPage() {
 </head>
 <body>
     <div class="container">
-        <h1>🎯 AprilTag Vision System</h1>
+        <h1>Yet Another AprilTag Detector</h1>
         
         <div class="card">
             <h2>System Status <span id="status"></span></h2>

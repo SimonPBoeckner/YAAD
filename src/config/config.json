@@ -3,12 +3,12 @@
     "index": 0,
     "width": 640,
     "height": 480,
-    "fps": 60
+    "fps": 120
   },
   "paths": {
     "field_layout": "/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json",
-    "camera_calibration": "/Users/sim/Projects/aprilTagDetector/calibration.yml",
-    "log_file": "apriltag_advanced.log"
+    "camera_calibration": "/Users/sim/Projects/aprilTagDetector/src/config/calibration.json",
+    "log_file": "/Users/sim/Projects/aprilTagDetector/src/util/apriltag.log"
   },
   "detection": {
     "quad_decimate": 1.0,
@@ -45,7 +45,7 @@
     "port": 8080
   },
   "networktables": {
-    "enabled": true,
+    "enabled": false,
     "team_number": "254",
     "server_address": "",
     "is_server": false,
