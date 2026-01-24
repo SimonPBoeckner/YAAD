@@ -38,6 +38,8 @@ add_executable( YAAD
     src/util/mjpegStreamer.cpp
     src/util/visualizationUtils.cpp
     src/util/networkTablesPublisher.cpp
+    src/pipeline/tagAngleCalculator.cpp
+    src/pipeline/poseEstimator.cpp
 )
 target_link_libraries( YAAD PRIVATE ${OpenCV_LIBS} )
 target_link_libraries( YAAD PRIVATE apriltag )
