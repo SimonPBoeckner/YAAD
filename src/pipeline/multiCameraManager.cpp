@@ -13,10 +13,19 @@ CameraStream::CameraStream(
     
     capture = std::make_unique<DefaultCapture>();
     detector = std::make_unique<FiducialDetector>(config.detectorConfig);
-    poseEstimator = std::make_unique<MultiTagCameraPoseEstimator>(
-        config.cameraConfig,
-        fieldLayout
-    );
+    
+    if (config.enablePoseEstimation) {
+        poseEstimator = std::make_unique<MultiTagCameraPoseEstimator>(
+            config.cameraConfig,
+            fieldLayout
+        );
+    }
+    
+    if (config.enableAngleCalculation) {
+        angleCalculator = std::make_unique<CameraMatrixTagAngleCalculator>(
+            config.cameraConfig
+        );
+    }
 }
 
 CameraStream::~CameraStream() {
@@ -75,13 +84,31 @@ void CameraStream::ProcessingLoop() {
         result.cameraName = config.cameraName;
         result.cameraIndex = config.cameraIndex;
         result.timestamp = std::chrono::system_clock::now();
+        result.hasPose = false;
+        result.hasAngle = false;
         
         if (detections && zarray_size(detections.get()) > 0) {
-            result.poseData = poseEstimator->SolveCameraPose(detections.get());
+            // Pose estimation
+            if (config.enablePoseEstimation && poseEstimator) {
+                result.poseData = poseEstimator->SolveCameraPose(detections.get());
+                result.hasPose = result.poseData.isValid();
+                
+                if (result.hasPose) {
+                    VisualizationUtils::DrawDetections(frame, detections.get());
+                    VisualizationUtils::DrawPoseOverlay(frame, result.poseData, config.cameraName);
+                }
+            }
             
-            // Draw detections on frame
-            VisualizationUtils::DrawDetections(frame, detections.get());
-            VisualizationUtils::DrawPoseOverlay(frame, result.poseData, config.cameraName);
+            // Angle calculation
+            if (config.enableAngleCalculation && angleCalculator) {
+                result.angleData = angleCalculator->CalculateTagAngle(detections.get());
+                result.hasAngle = result.angleData.isValid();
+                
+                if (result.hasAngle) {
+                    // Draw angle visualization
+                    DrawAngleVisualization(frame, result.angleData);
+                }
+            }
         }
         
         // Draw FPS
@@ -97,6 +124,26 @@ void CameraStream::ProcessingLoop() {
             latestResult = std::move(result);
             hasResult = true;
         }
+    }
+}
+
+void CameraStream::DrawAngleVisualization(cv::Mat& frame, const TagAngleObject& angleData) {
+    // Draw tag ID
+    char text[100];
+    snprintf(text, sizeof(text), "Tag %d - Dist: %.2fm", 
+             angleData.tag_id, angleData.distance);
+    cv::putText(frame, text, cv::Point(10, frame.rows - 100),
+                cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255, 255, 0), 2);
+    
+    // Draw corner angles
+    for (int i = 0; i < 4; i++) {
+        double azimuth = angleData.corners(i, 0);
+        double elevation = angleData.corners(i, 1);
+        
+        snprintf(text, sizeof(text), "Corner %d: Az=%.2f El=%.2f", 
+                 i, azimuth * 180.0 / M_PI, elevation * 180.0 / M_PI);
+        cv::putText(frame, text, cv::Point(10, frame.rows - 80 + i * 20),
+                    cv::FONT_HERSHEY_SIMPLEX, 0.4, cv::Scalar(200, 200, 255), 1);
     }
 }
 

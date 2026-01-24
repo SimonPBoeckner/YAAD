@@ -64,6 +64,10 @@ int main(int argc, char** argv) {
         cam1Config.cameraConfig.tagSize = config.tagSize;
         cam1Config.cameraMountPose = frc::Pose3d(); // Identity pose
         
+        // Enable features based on config
+        cam1Config.enablePoseEstimation = true;
+        cam1Config.enableAngleCalculation = false;  // Toggle this per camera
+        
         cameraManager.AddCamera(cam1Config);
         
         // Optionally add second camera

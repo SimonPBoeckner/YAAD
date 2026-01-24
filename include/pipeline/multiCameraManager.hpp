@@ -9,6 +9,7 @@
 #include "capture.hpp"
 #include "fiducialDetector.hpp"
 #include "cameraPoseEstimator.hpp"
+#include "tagAngleCalculator.hpp"
 #include "performanceMonitor.hpp"
 #include "dataTypes.hpp"
 
@@ -19,15 +20,22 @@ struct CameraStreamConfig {
     DetectorConfig detectorConfig;
     CameraConfig cameraConfig;
     frc::Pose3d cameraMountPose; // Position of camera relative to robot/world
+    
+    // Toggle features
+    bool enablePoseEstimation = true;
+    bool enableAngleCalculation = false;  // NEW: Enable tag angle output
 };
 
 struct CameraDetectionResult {
     std::string cameraName;
     int cameraIndex;
     CameraPoseObject poseData;
+    TagAngleObject angleData;  // NEW: Tag angle data
     std::chrono::system_clock::time_point timestamp;
     cv::Mat frame; // Optional, for visualization
     bool hasFrame;
+    bool hasPose;
+    bool hasAngle;  // NEW: Flag for angle data validity
 };
 
 class CameraStream {
@@ -49,6 +57,7 @@ public:
 
 private:
     void ProcessingLoop();
+    void DrawAngleVisualization(cv::Mat& frame, const TagAngleObject& angleData);
     
     CameraStreamConfig config;
     std::shared_ptr<FieldLayout> fieldLayout;
@@ -56,6 +65,7 @@ private:
     std::unique_ptr<DefaultCapture> capture;
     std::unique_ptr<FiducialDetector> detector;
     std::unique_ptr<MultiTagCameraPoseEstimator> poseEstimator;
+    std::unique_ptr<CameraMatrixTagAngleCalculator> angleCalculator;  // NEW
     
     std::thread workerThread;
     std::atomic<bool> running;

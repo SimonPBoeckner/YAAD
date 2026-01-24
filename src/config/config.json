@@ -3,12 +3,12 @@
     "index": 0,
     "width": 640,
     "height": 480,
-    "fps": 120
+    "fps": 60
   },
   "paths": {
     "field_layout": "/Users/sim/Projects/aprilTagDetector/Layout/2025-official.json",
-    "camera_calibration": "/Users/sim/Projects/aprilTagDetector/src/config/calibration.json",
-    "log_file": "/Users/sim/Projects/aprilTagDetector/src/util/apriltag.log"
+    "camera_calibration": "/Users/sim/Projects/aprilTagDetector/calibration.yml",
+    "log_file": "apriltag_advanced.log"
   },
   "detection": {
     "quad_decimate": 1.0,
@@ -20,7 +20,7 @@
     "size": 0.162
   },
   "display": {
-    "visualization": true,
+    "visualization": false,
     "fps": true,
     "verbose": false
   },
@@ -45,16 +45,18 @@
     "port": 8080
   },
   "networktables": {
-    "enabled": false,
-    "team_number": "4069",
+    "enabled": true,
+    "team_number": "254",
     "server_address": "",
-    "is_server": true,
+    "is_server": false,
     "table_name": "Vision"
   },
   "cameras": [
     {
       "name": "front_camera",
       "index": 0,
+      "enable_pose_estimation": true,
+      "enable_angle_calculation": false,
       "mount_pose": {
         "x": 0.0,
         "y": 0.0,

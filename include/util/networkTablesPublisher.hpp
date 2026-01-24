@@ -68,6 +68,11 @@ private:
     std::unordered_map<std::string, nt::DoublePublisher> cameraErrorPublishers;
     std::unordered_map<std::string, nt::BooleanPublisher> cameraActivePublishers;
     
+    // Tag angle publishers (NEW)
+    std::unordered_map<std::string, nt::IntegerPublisher> cameraAngleTagIdPublishers;
+    std::unordered_map<std::string, nt::DoubleArrayPublisher> cameraAngleCornersPublishers;
+    std::unordered_map<std::string, nt::DoublePublisher> cameraAngleDistancePublishers;
+    
     // System status
     nt::BooleanPublisher systemActivePublisher;
     nt::StringPublisher systemStatusPublisher;

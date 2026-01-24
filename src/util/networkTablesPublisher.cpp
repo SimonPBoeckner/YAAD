@@ -114,6 +114,7 @@ void NetworkTablesPublisher::InitializeCameraPublisher(const std::string& camera
     
     auto cameraTable = camerasTable->GetSubTable(cameraName);
     
+    // Pose estimation publishers
     cameraPosePublishers[cameraName] = 
         cameraTable->GetDoubleArrayTopic("pose").Publish();
     cameraTagIdPublishers[cameraName] = 
@@ -122,6 +123,15 @@ void NetworkTablesPublisher::InitializeCameraPublisher(const std::string& camera
         cameraTable->GetDoubleTopic("error").Publish();
     cameraActivePublishers[cameraName] = 
         cameraTable->GetBooleanTopic("active").Publish();
+    
+    // Tag angle publishers (NEW)
+    auto angleTable = cameraTable->GetSubTable("Angles");
+    cameraAngleTagIdPublishers[cameraName] = 
+        angleTable->GetIntegerTopic("tag_id").Publish();
+    cameraAngleCornersPublishers[cameraName] = 
+        angleTable->GetDoubleArrayTopic("corners").Publish();
+    cameraAngleDistancePublishers[cameraName] = 
+        angleTable->GetDoubleTopic("distance").Publish();
     
     LOG_DEBUG("Initialized NetworkTables publishers for camera: " + cameraName);
 }
@@ -179,7 +189,8 @@ void NetworkTablesPublisher::PublishCameraDetections(
             // Mark camera as active
             cameraActivePublishers[result.cameraName].Set(true);
             
-            if (result.poseData.isValid()) {
+            // Publish pose data
+            if (result.hasPose && result.poseData.isValid()) {
                 // Publish pose
                 auto poseArray = PoseToArray(result.poseData.pose_0);
                 cameraPosePublishers[result.cameraName].Set(poseArray);
@@ -194,8 +205,23 @@ void NetworkTablesPublisher::PublishCameraDetections(
                 // Publish error
                 cameraErrorPublishers[result.cameraName].Set(result.poseData.error_0);
             } else {
-                // No detections - publish empty arrays
+                // No pose detections - publish empty arrays
                 cameraTagIdPublishers[result.cameraName].Set(std::vector<int64_t>());
+            }
+            
+            // Publish angle data (NEW)
+            if (result.hasAngle && result.angleData.isValid()) {
+                cameraAngleTagIdPublishers[result.cameraName].Set(result.angleData.tag_id);
+                
+                // Convert Eigen matrix to double array [corner0_az, corner0_el, corner1_az, corner1_el, ...]
+                std::vector<double> cornersArray;
+                for (int i = 0; i < 4; i++) {
+                    cornersArray.push_back(result.angleData.corners(i, 0)); // azimuth
+                    cornersArray.push_back(result.angleData.corners(i, 1)); // elevation
+                }
+                cameraAngleCornersPublishers[result.cameraName].Set(cornersArray);
+                
+                cameraAngleDistancePublishers[result.cameraName].Set(result.angleData.distance);
             }
         }
         
