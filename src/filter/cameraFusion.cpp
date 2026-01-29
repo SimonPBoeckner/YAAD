@@ -68,6 +68,11 @@ FusedPoseResult CameraFusion::FuseDetections(
             // Convert weight to measurement noise (higher weight = lower noise)
             double measurementNoise = 1.0 / (avgWeight + 0.01);
             
+            if (!kalmanFilter.IsInitialized()) {
+                LOG_INFO("Initializing Kalman filter with first measurement");
+                kalmanFilter.Initialize(*fusedPoseOpt);
+            }
+            
             kalmanFilter.Update(*fusedPoseOpt, measurementNoise);
             result.confidence = avgWeight;
         } else {

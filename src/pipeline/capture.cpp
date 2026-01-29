@@ -37,13 +37,26 @@ void DefaultCapture::ApplyConfig(const CaptureConfig& config) {
 }
 
 std::optional<cv::Mat> DefaultCapture::GetFrame() {
-    if (!cap.isOpened() && !Init(0, currentConfig)) {
-        return std::nullopt;
+    if (!cap.isOpened()) {
+        std::cerr << "Camera not opened, attempting to reconnect...\n";
+        if (!Init(0, currentConfig)) {
+            return std::nullopt;
+        }
     }
 
     cv::Mat frame;
     if (!cap.read(frame) || frame.empty()) {
-        return std::nullopt;
+        std::cerr << "Failed to read frame, camera may have disconnected\n";
+        // Try to reopen the camera
+        cap.release();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        if (!Init(0, currentConfig)) {
+            return std::nullopt;
+        }
+        // Try one more time
+        if (!cap.read(frame) || frame.empty()) {
+            return std::nullopt;
+        }
     }
 
     return frame;

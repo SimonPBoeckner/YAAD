@@ -72,19 +72,26 @@ TagAngleObject CameraMatrixTagAngleCalculator::CalculateTagAngle(zarray_t* detec
         corners(i, 1) = std::atan(vec(1));
     }
 
-    // Get pose estimation for distance
+    // Get pose estimation for distance AND full pose data
     FiducialPoseObject fiducialPose = poseEstimator.SolveFiducialPose(detections);
     if (!fiducialPose.isValid()) {
         return TagAngleObject{};
     }
 
+    // Choose best pose based on error
     double distance = (fiducialPose.error0 < fiducialPose.error1)
         ? fiducialPose.pose0.Translation().Norm().value()
         : fiducialPose.pose1.Translation().Norm().value();
 
-    return TagAngleObject{
-        .tag_id = fiducialPose.tag_id,
-        .corners = corners,
-        .distance = distance
-    };
+    // Return complete data including both pose solutions
+    TagAngleObject result;
+    result.tag_id = fiducialPose.tag_id;
+    result.corners = corners;
+    result.distance = distance;
+    result.pose0 = fiducialPose.pose0;
+    result.error0 = fiducialPose.error0;
+    result.pose1 = fiducialPose.pose1;
+    result.error1 = fiducialPose.error1;
+    
+    return result;
 }

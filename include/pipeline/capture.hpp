@@ -1,6 +1,8 @@
 #pragma once
 #include <opencv2/opencv.hpp>
 #include <optional>
+#include <thread>
+#include <chrono>
 
 struct CaptureConfig {
     int width = 640;

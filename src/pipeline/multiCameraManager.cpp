@@ -86,6 +86,7 @@ void CameraStream::ProcessingLoop() {
         result.timestamp = std::chrono::system_clock::now();
         result.hasPose = false;
         result.hasAngle = false;
+        result.hasFrame = false;
         
         if (detections && zarray_size(detections.get()) > 0) {
             // Pose estimation
@@ -93,7 +94,7 @@ void CameraStream::ProcessingLoop() {
                 result.poseData = poseEstimator->SolveCameraPose(detections.get());
                 result.hasPose = result.poseData.isValid();
                 
-                if (result.hasPose) {
+                if (result.hasPose && config.storeFrames) {
                     VisualizationUtils::DrawDetections(frame, detections.get());
                     VisualizationUtils::DrawPoseOverlay(frame, result.poseData, config.cameraName);
                 }
@@ -104,19 +105,25 @@ void CameraStream::ProcessingLoop() {
                 result.angleData = angleCalculator->CalculateTagAngle(detections.get());
                 result.hasAngle = result.angleData.isValid();
                 
-                if (result.hasAngle) {
+                if (result.hasAngle && config.storeFrames) {
                     // Draw angle visualization
                     DrawAngleVisualization(frame, result.angleData);
                 }
             }
         }
         
-        // Draw FPS
-        fpsCounter.Tick();
-        VisualizationUtils::DrawFPS(frame, fpsCounter.GetFPS());
-        
-        result.hasFrame = true;
-        result.frame = frame.clone();
+        // Only clone and store frame if needed for visualization/streaming
+        if (config.storeFrames) {
+            // Draw FPS
+            fpsCounter.Tick();
+            VisualizationUtils::DrawFPS(frame, fpsCounter.GetFPS());
+            
+            result.hasFrame = true;
+            result.frame = frame.clone();
+        } else {
+            result.hasFrame = false;
+            fpsCounter.Tick(); // Still track FPS even if not storing frames
+        }
         
         // Update latest result (thread-safe)
         {
@@ -128,23 +135,43 @@ void CameraStream::ProcessingLoop() {
 }
 
 void CameraStream::DrawAngleVisualization(cv::Mat& frame, const TagAngleObject& angleData) {
-    // Draw tag ID
+    // Draw tag ID and distance
     char text[100];
     snprintf(text, sizeof(text), "Tag %d - Dist: %.2fm", 
              angleData.tag_id, angleData.distance);
-    cv::putText(frame, text, cv::Point(10, frame.rows - 100),
+    cv::putText(frame, text, cv::Point(10, frame.rows - 140),
                 cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255, 255, 0), 2);
     
-    // Draw corner angles
-    for (int i = 0; i < 4; i++) {
-        double azimuth = angleData.corners(i, 0);
-        double elevation = angleData.corners(i, 1);
-        
-        snprintf(text, sizeof(text), "Corner %d: Az=%.2f El=%.2f", 
-                 i, azimuth * 180.0 / M_PI, elevation * 180.0 / M_PI);
-        cv::putText(frame, text, cv::Point(10, frame.rows - 80 + i * 20),
-                    cv::FONT_HERSHEY_SIMPLEX, 0.4, cv::Scalar(200, 200, 255), 1);
-    }
+    // Draw pose information
+    snprintf(text, sizeof(text), "Pose0: [%.2f, %.2f, %.2f] Err: %.4f",
+             angleData.pose0.Translation().X().value(),
+             angleData.pose0.Translation().Y().value(),
+             angleData.pose0.Translation().Z().value(),
+             angleData.error0);
+    cv::putText(frame, text, cv::Point(10, frame.rows - 115),
+                cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 255), 1);
+    
+    snprintf(text, sizeof(text), "Pose1: [%.2f, %.2f, %.2f] Err: %.4f",
+             angleData.pose1.Translation().X().value(),
+             angleData.pose1.Translation().Y().value(),
+             angleData.pose1.Translation().Z().value(),
+             angleData.error1);
+    cv::putText(frame, text, cv::Point(10, frame.rows - 95),
+                cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 255), 1);
+    
+    // Indicate which pose is better
+    std::string bestPose = (angleData.error0 < angleData.error1) ? "Using Pose0" : "Using Pose1";
+    cv::putText(frame, bestPose, cv::Point(10, frame.rows - 75),
+                cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 1);
+    
+    // Draw corner angles (compact format)
+    snprintf(text, sizeof(text), "Corners: [%.1f,%.1f] [%.1f,%.1f] [%.1f,%.1f] [%.1f,%.1f]", 
+             angleData.corners(0, 0) * 180.0 / M_PI, angleData.corners(0, 1) * 180.0 / M_PI,
+             angleData.corners(1, 0) * 180.0 / M_PI, angleData.corners(1, 1) * 180.0 / M_PI,
+             angleData.corners(2, 0) * 180.0 / M_PI, angleData.corners(2, 1) * 180.0 / M_PI,
+             angleData.corners(3, 0) * 180.0 / M_PI, angleData.corners(3, 1) * 180.0 / M_PI);
+    cv::putText(frame, text, cv::Point(10, frame.rows - 50),
+                cv::FONT_HERSHEY_SIMPLEX, 0.4, cv::Scalar(200, 200, 255), 1);
 }
 
 // MultiCameraManager Implementation

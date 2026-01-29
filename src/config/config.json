@@ -20,9 +20,9 @@
     "size": 0.162
   },
   "display": {
-    "visualization": false,
+    "visualization": true,
     "fps": true,
-    "verbose": false
+    "verbose": true
   },
   "performance": {
     "enabled": true,
@@ -46,9 +46,9 @@
   },
   "networktables": {
     "enabled": false,
-    "team_number": "254",
-    "server_address": "",
-    "is_server": false,
+    "team_number": "4069",
+    "server_address": "127.0.0.1",
+    "is_server": true,
     "table_name": "Vision"
   },
   "cameras": [
@@ -56,7 +56,7 @@
       "name": "front_camera",
       "index": 0,
       "enable_pose_estimation": true,
-      "enable_angle_calculation": false,
+      "enable_angle_calculation": true,
       "mount_pose": {
         "x": 0.0,
         "y": 0.0,

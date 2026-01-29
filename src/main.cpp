@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
         // Initialize multi-camera manager
         MultiCameraManager cameraManager(fieldLayout);
         
-        // Add cameras (example with 2 cameras)
+        // Add cameras (example with 1 camera, configure based on your needs)
         CameraStreamConfig cam1Config;
         cam1Config.cameraIndex = 0;
         cam1Config.cameraName = "front_camera";
@@ -67,14 +67,9 @@ int main(int argc, char** argv) {
         // Enable features based on config
         cam1Config.enablePoseEstimation = true;
         cam1Config.enableAngleCalculation = false;  // Toggle this per camera
+        cam1Config.storeFrames = config.showVisualization;  // Only store frames if visualization is enabled
         
         cameraManager.AddCamera(cam1Config);
-        
-        // Optionally add second camera
-        // CameraStreamConfig cam2Config = cam1Config;
-        // cam2Config.cameraIndex = 1;
-        // cam2Config.cameraName = "rear_camera";
-        // cameraManager.AddCamera(cam2Config);
         
         // Initialize camera fusion
         CameraFusion fusion;
@@ -82,15 +77,29 @@ int main(int argc, char** argv) {
         fusion.SetMinCamerasRequired(1);
         fusion.SetProcessNoise(0.01);
         
-        // Initialize network streamer
-        NetworkConfig networkConfig;
-        networkConfig.protocol = NetworkProtocol::UDP;
-        networkConfig.address = "127.0.0.1";
-        networkConfig.port = 5800;
+        // Latest fused result storage (needed for web server if enabled)
+        FusedPoseResult latestFusedResult;
+        std::mutex fusedResultMutex;
         
-        NetworkStreamer networkStreamer(networkConfig);
-        if (networkStreamer.Start()) {
-            LOG_INFO("Network streamer started on UDP port 5800");
+        // Initialize network streamer (if enabled in config)
+        std::unique_ptr<NetworkStreamer> networkStreamer;
+        bool networkEnabled = false;
+        
+        // Check if network section exists in config
+        // For now, we'll add a flag to AppConfig to control this
+        // Defaulting to disabled to match your intent
+        if (networkEnabled) {  // TODO: Add networkEnabled flag to AppConfig
+            NetworkConfig networkConfig;
+            networkConfig.protocol = NetworkProtocol::UDP;
+            networkConfig.address = "127.0.0.1";
+            networkConfig.port = 5800;
+            
+            networkStreamer = std::make_unique<NetworkStreamer>(networkConfig);
+            if (networkStreamer->Start()) {
+                LOG_INFO("Network streamer started on UDP port 5800");
+            }
+        } else {
+            LOG_INFO("Network streaming disabled in config");
         }
         
         // Initialize NetworkTables publisher for FRC
@@ -102,46 +111,66 @@ int main(int argc, char** argv) {
         ntConfig.tableName = config.ntTableName;
         
         NetworkTablesPublisher ntPublisher(ntConfig);
-        if (ntPublisher.Start()) {
-            if (config.ntIsServer) {
-                LOG_INFO("NetworkTables server started on port 5810");
-            } else if (!config.teamNumber.empty() && config.teamNumber != "0") {
-                LOG_INFO("NetworkTables client connecting to team " + config.teamNumber);
-            } else if (!config.ntServerAddress.empty()) {
-                LOG_INFO("NetworkTables client connecting to " + config.ntServerAddress);
+        bool ntStarted = false;
+        
+        if (config.networkTablesEnabled) {
+            LOG_INFO("Attempting to start NetworkTables...");
+            ntStarted = ntPublisher.Start();
+            
+            if (ntStarted) {
+                if (config.ntIsServer) {
+                    LOG_INFO("NetworkTables server started on port 5810");
+                } else if (!config.teamNumber.empty() && config.teamNumber != "0") {
+                    LOG_INFO("NetworkTables client connecting to team " + config.teamNumber);
+                } else if (!config.ntServerAddress.empty()) {
+                    LOG_INFO("NetworkTables client connecting to " + config.ntServerAddress);
+                }
+            } else {
+                LOG_WARNING("NetworkTables failed to start - continuing without it");
             }
+        } else {
+            LOG_INFO("NetworkTables disabled in config");
         }
         
-        // Initialize MJPEG stream manager
-        MJPEGStreamManager mjpegManager;
-        mjpegManager.AddStream("front_camera", 8081);
-        // Add more streams as needed for additional cameras
-        mjpegManager.StartAll();
-        LOG_INFO("MJPEG streams started");
+        // Initialize MJPEG stream manager (if visualization enabled)
+        std::unique_ptr<MJPEGStreamManager> mjpegManager;
+        if (config.showVisualization && cam1Config.storeFrames) {
+            mjpegManager = std::make_unique<MJPEGStreamManager>();
+            mjpegManager->AddStream("front_camera", 8081);
+            // Add more streams as needed for additional cameras
+            mjpegManager->StartAll();
+            LOG_INFO("MJPEG streams started");
+        } else {
+            LOG_INFO("MJPEG streaming disabled (visualization off or storeFrames = false)");
+        }
         
-        // Initialize web server
-        WebServer webServer(8080);
-        
-        // Latest fused result storage
-        FusedPoseResult latestFusedResult;
-        std::mutex fusedResultMutex;
-        
-        // Set web server callbacks
-        webServer.SetFusedPoseCallback([&]() -> FusedPoseResult {
-            std::lock_guard<std::mutex> lock(fusedResultMutex);
-            return latestFusedResult;
-        });
-        
-        webServer.SetCameraResultsCallback([&]() -> std::vector<CameraDetectionResult> {
-            return cameraManager.GetAllLatestResults();
-        });
-        
-        webServer.SetStreamInfoCallback([&]() -> std::vector<std::pair<std::string, int>> {
-            return mjpegManager.GetStreamInfo();
-        });
-        
-        if (webServer.Start()) {
-            LOG_INFO("Web interface available at http://localhost:8080");
+        // Initialize web server (if enabled in config)
+        std::unique_ptr<WebServer> webServer;
+        if (config.showVisualization) {  // Use showVisualization to control web server
+            webServer = std::make_unique<WebServer>(8080);
+            
+            // Set web server callbacks
+            webServer->SetFusedPoseCallback([&]() -> FusedPoseResult {
+                std::lock_guard<std::mutex> lock(fusedResultMutex);
+                return latestFusedResult;
+            });
+            
+            webServer->SetCameraResultsCallback([&]() -> std::vector<CameraDetectionResult> {
+                return cameraManager.GetAllLatestResults();
+            });
+            
+            webServer->SetStreamInfoCallback([&]() -> std::vector<std::pair<std::string, int>> {
+                if (mjpegManager) {
+                    return mjpegManager->GetStreamInfo();
+                }
+                return std::vector<std::pair<std::string, int>>();
+            });
+            
+            if (webServer->Start()) {
+                LOG_INFO("Web interface available at http://localhost:8080");
+            }
+        } else {
+            LOG_INFO("Web server disabled in config");
         }
         
         // Start all cameras
@@ -154,8 +183,10 @@ int main(int argc, char** argv) {
         int frameCount = 0;
         
         LOG_INFO("System running. Press Ctrl+C to exit.");
-        LOG_INFO("Web interface: http://localhost:8080");
-        if (ntPublisher.IsRunning()) {
+        if (config.showVisualization && webServer) {
+            LOG_INFO("Web interface: http://localhost:8080");
+        }
+        if (ntStarted && ntPublisher.IsRunning()) {
             LOG_INFO("NetworkTables publishing to table: " + config.ntTableName);
         }
         
@@ -174,10 +205,12 @@ int main(int argc, char** argv) {
                 cameraResults = cameraManager.GetAllLatestResults();
             }
             
-            // Update MJPEG streams with frames
-            for (const auto& result : cameraResults) {
-                if (result.hasFrame && !result.frame.empty()) {
-                    mjpegManager.UpdateFrame(result.cameraName, result.frame);
+            // Update MJPEG streams with frames ONLY if visualization enabled and frames available
+            if (config.showVisualization && mjpegManager) {
+                for (const auto& result : cameraResults) {
+                    if (result.hasFrame && !result.frame.empty()) {
+                        mjpegManager->UpdateFrame(result.cameraName, result.frame);
+                    }
                 }
             }
             
@@ -196,28 +229,80 @@ int main(int argc, char** argv) {
                 latestFusedResult = fusedResult;
             }
             
-            // Send over network
-            if (networkStreamer.IsRunning()) {
-                networkStreamer.SendFusedPose(fusedResult);
-                networkStreamer.SendMultipleCameras(cameraResults);
+            // Send over network (if enabled)
+            if (networkStreamer && networkStreamer->IsRunning()) {
+                networkStreamer->SendFusedPose(fusedResult);
+                networkStreamer->SendMultipleCameras(cameraResults);
             }
             
             // Publish to NetworkTables for FRC
             if (ntPublisher.IsRunning()) {
+                if (config.enablePerformanceMonitoring) {
+                    PERF_TIMER("nt_publish");
+                }
+                
                 ntPublisher.PublishAll(fusedResult, cameraResults);
+                
+                // Flush every frame for real-time updates
+                ntPublisher.Flush();
+                
+                // More frequent status logging for debugging
+                if (frameCount % 100 == 0) {
+                    bool connected = ntPublisher.IsConnected();
+                    LOG_INFO("NT Status: " + std::string(connected ? "CONNECTED" : "DISCONNECTED") + 
+                            " | Frame: " + std::to_string(frameCount) +
+                            " | Cameras: " + std::to_string(cameraResults.size()));
+                }
             }
             
-            // Log results periodically
-            if (frameCount % 30 == 0 && fusedResult.confidence > 0.5) {
+            // Log results periodically with detailed debugging
+            if (frameCount % 30 == 0) {
                 std::string ntStatus = ntPublisher.IsConnected() ? "Connected" : "Disconnected";
-                LOG_INFO("Fused pose: [" +
-                    std::to_string(fusedResult.pose.Translation().X().value()) + ", " +
-                    std::to_string(fusedResult.pose.Translation().Y().value()) + ", " +
-                    std::to_string(fusedResult.pose.Translation().Z().value()) + "] " +
-                    "Confidence: " + std::to_string(fusedResult.confidence) +
-                    " Cameras: " + std::to_string(fusedResult.numCamerasUsed) +
-                    " NT: " + ntStatus
-                );
+                
+                // Debug: Log camera results
+                LOG_INFO("=== Frame " + std::to_string(frameCount) + " Debug ===");
+                LOG_INFO("Camera results count: " + std::to_string(cameraResults.size()));
+                
+                for (const auto& result : cameraResults) {
+                    LOG_INFO("Camera: " + result.cameraName + 
+                            " | hasPose: " + std::to_string(result.hasPose) +
+                            " | hasAngle: " + std::to_string(result.hasAngle));
+                    
+                    if (result.hasPose && result.poseData.isValid()) {
+                        LOG_INFO("  Tags detected: " + std::to_string(result.poseData.tag_ids.size()));
+                        std::string tagIds = "  Tag IDs: ";
+                        for (int id : result.poseData.tag_ids) {
+                            tagIds += std::to_string(id) + " ";
+                        }
+                        LOG_INFO(tagIds);
+                        LOG_INFO("  Pose: [" +
+                            std::to_string(result.poseData.pose_0.Translation().X().value()) + ", " +
+                            std::to_string(result.poseData.pose_0.Translation().Y().value()) + ", " +
+                            std::to_string(result.poseData.pose_0.Translation().Z().value()) + "]");
+                        LOG_INFO("  Error: " + std::to_string(result.poseData.error_0));
+                    } else {
+                        LOG_INFO("  No valid pose data");
+                    }
+                }
+                
+                if (fusedResult.confidence > 0.5) {
+                    LOG_INFO("Fused pose: [" +
+                        std::to_string(fusedResult.pose.Translation().X().value()) + ", " +
+                        std::to_string(fusedResult.pose.Translation().Y().value()) + ", " +
+                        std::to_string(fusedResult.pose.Translation().Z().value()) + "] " +
+                        "Confidence: " + std::to_string(fusedResult.confidence) +
+                        " Cameras: " + std::to_string(fusedResult.numCamerasUsed) +
+                        " NT: " + ntStatus
+                    );
+                } else {
+                    LOG_INFO("Low confidence (" + std::to_string(fusedResult.confidence) + ") | NT: " + ntStatus);
+                }
+                
+                LOG_INFO("================================");
+            } else if (frameCount % 100 == 0) {
+                // Less frequent status update
+                std::string ntStatus = ntPublisher.IsConnected() ? "Connected" : "Disconnected";
+                LOG_INFO("System running | NT: " + ntStatus + " | Frame: " + std::to_string(frameCount));
             }
             
             // Update FPS
@@ -231,7 +316,7 @@ int main(int argc, char** argv) {
                 LOG_INFO("FPS: " + std::to_string(fpsCounter.GetFPS()));
             }
             
-            // Don't spin too fast
+            // Don't spin too fast - adjust based on your needs
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
         
@@ -239,9 +324,15 @@ int main(int argc, char** argv) {
         LOG_INFO("Shutting down...");
         ntPublisher.Stop();
         cameraManager.StopAll();
-        mjpegManager.StopAll();
-        networkStreamer.Stop();
-        webServer.Stop();
+        if (mjpegManager) {
+            mjpegManager->StopAll();
+        }
+        if (networkStreamer) {
+            networkStreamer->Stop();
+        }
+        if (webServer) {
+            webServer->Stop();
+        }
         
         if (config.enablePerformanceMonitoring) {
             LOG_INFO("Final performance statistics:");

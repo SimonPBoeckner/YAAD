@@ -66,6 +66,10 @@ struct TagAngleObject {
     int tag_id = -1;
     Eigen::Matrix<double, 4, 2> corners;
     double distance = 0.0;
+    frc::Pose3d pose0;
+    double error0 = 0.0;
+    frc::Pose3d pose1;
+    double error1 = 0.0;
     
     bool isValid() const {
         return tag_id >= 0;

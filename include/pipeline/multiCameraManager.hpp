@@ -23,19 +23,20 @@ struct CameraStreamConfig {
     
     // Toggle features
     bool enablePoseEstimation = true;
-    bool enableAngleCalculation = false;  // NEW: Enable tag angle output
+    bool enableAngleCalculation = false;
+    bool storeFrames = false;  // NEW: Only store frames if needed for visualization/streaming
 };
 
 struct CameraDetectionResult {
     std::string cameraName;
     int cameraIndex;
     CameraPoseObject poseData;
-    TagAngleObject angleData;  // NEW: Tag angle data
+    TagAngleObject angleData;
     std::chrono::system_clock::time_point timestamp;
     cv::Mat frame; // Optional, for visualization
     bool hasFrame;
     bool hasPose;
-    bool hasAngle;  // NEW: Flag for angle data validity
+    bool hasAngle;
 };
 
 class CameraStream {
@@ -65,7 +66,7 @@ private:
     std::unique_ptr<DefaultCapture> capture;
     std::unique_ptr<FiducialDetector> detector;
     std::unique_ptr<MultiTagCameraPoseEstimator> poseEstimator;
-    std::unique_ptr<CameraMatrixTagAngleCalculator> angleCalculator;  // NEW
+    std::unique_ptr<CameraMatrixTagAngleCalculator> angleCalculator;
     
     std::thread workerThread;
     std::atomic<bool> running;

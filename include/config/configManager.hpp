@@ -24,7 +24,7 @@ struct AppConfig {
     double tagSize = 0.162; // meters
     
     // Display settings
-    bool showVisualization = true;
+    bool showVisualization = false;
     bool showFPS = true;
     bool verboseLogging = false;
     

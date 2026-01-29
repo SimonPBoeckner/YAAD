@@ -33,17 +33,20 @@ public:
     bool IsRunning() const;
     bool IsConnected() const;
     
-    // Publish fused pose data
+    // Publish fused pose data (thread-safe)
     void PublishFusedPose(const FusedPoseResult& result);
     
-    // Publish individual camera detections
+    // Publish individual camera detections (thread-safe)
     void PublishCameraDetections(const std::vector<CameraDetectionResult>& results);
     
-    // Publish both fused and individual data
+    // Publish both fused and individual data (thread-safe)
     void PublishAll(
         const FusedPoseResult& fusedResult,
         const std::vector<CameraDetectionResult>& cameraResults
     );
+    
+    // Manual flush (call periodically, not every update)
+    void Flush();
 
 private:
     NetworkTablesConfig config;
@@ -68,7 +71,7 @@ private:
     std::unordered_map<std::string, nt::DoublePublisher> cameraErrorPublishers;
     std::unordered_map<std::string, nt::BooleanPublisher> cameraActivePublishers;
     
-    // Tag angle publishers (NEW)
+    // Tag angle publishers
     std::unordered_map<std::string, nt::IntegerPublisher> cameraAngleTagIdPublishers;
     std::unordered_map<std::string, nt::DoubleArrayPublisher> cameraAngleCornersPublishers;
     std::unordered_map<std::string, nt::DoublePublisher> cameraAngleDistancePublishers;
